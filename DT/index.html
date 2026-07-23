@@ -9,13 +9,13 @@
 :root[data-theme="dark"]{--bg:#0d1013;--fg:#e6e9ef;--muted:#9aa4b2;--card:#161a20;--card2:#1c2129;--line:#262c34;--accent:#ff5d5d;--fbg:#141c2e;--fbd:#ff5d5d;--warn:#3a3213;--warnfg:#ffd873;--code:#1a1f26;--shadow:0 1px 3px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;transition:background .15s ease,color .15s ease;}
-.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;height:var(--topbar-h);padding:0 16px;background:var(--bg);background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+body{margin:0;background:var(--bg);color:var(--fg);overflow-wrap:break-word;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;transition:background .15s ease,color .15s ease;}
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:8px;height:var(--topbar-h);padding:0 12px;background:var(--bg);background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
 .topbar .back{flex:0 0 auto;color:var(--fg);text-decoration:none;font-size:14px;font-weight:600;padding:8px 10px;border-radius:8px;white-space:nowrap;}
 .topbar .back:hover{background:var(--card);color:var(--accent);}
-.topbar .search{flex:1;display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:0 12px;max-width:520px;margin:0 auto;}
-.topbar .search .ic{color:var(--muted);font-size:14px;}
-.topbar .search input{flex:1;border:0;background:transparent;color:var(--fg);font-size:14px;padding:9px 0;outline:none;}
+.topbar .search{flex:1;min-width:0;display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:0 12px;max-width:520px;margin:0 auto;}
+.topbar .search .ic{flex:0 0 auto;color:var(--muted);font-size:14px;}
+.topbar .search input{flex:1;min-width:0;width:100%;border:0;background:transparent;color:var(--fg);font-size:14px;padding:9px 0;outline:none;}
 .topbar .search input::placeholder{color:var(--muted);}
 .theme-btn{flex:0 0 auto;width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--card);cursor:pointer;font-size:16px;line-height:1;}
 .theme-btn:hover{border-color:var(--accent);}
@@ -33,12 +33,12 @@ h4{font-size:15px;margin:1em 0 .2em;}
 p{margin:.5em 0}
 blockquote{margin:.7em 0;padding:.6em 1em;background:var(--card);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;color:var(--muted);}
 code{background:var(--code);padding:.1em .35em;border-radius:5px;font-size:.9em;}
-.tw{overflow-x:auto;margin:.8em 0;border-radius:10px;}
+.tw{overflow-x:auto;width:100%;margin:.8em 0;border-radius:10px;}
 table{border-collapse:collapse;width:100%;font-size:14px;min-width:340px;}
 th,td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top;}
 th{background:var(--card2);}
 tbody tr:nth-child(even){background:var(--card);}
-.fbox{background:var(--fbg);border-left:4px solid var(--fbd);border-radius:0 10px 10px 0;padding:13px 17px;margin:.8em 0;font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;font-size:15px;overflow-x:auto;white-space:nowrap;}
+.fbox{background:var(--fbg);border-left:4px solid var(--fbd);border-radius:0 10px 10px 0;padding:13px 17px;margin:.8em 0;font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;font-size:15px;overflow-x:auto;width:100%;white-space:nowrap;}
 .imath{font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;}
 .frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;margin:0 .25em;}
 .frac .num{border-bottom:1.5px solid currentColor;padding:0 .35em;}
@@ -51,13 +51,22 @@ hr{border:none;border-top:1px solid var(--line);margin:1.4em 0;}
 .no-results{display:none;color:var(--muted);padding:40px 0;text-align:center;font-size:15px;}
 @media (max-width:820px){
  .topbar .back .txt{display:none;}
- .topbar .back::before{content:"←";}
- .wrap{flex-direction:column;}
+ .topbar .back::before{content:"←";font-size:18px;}
+ .topbar .back{padding:8px;}
+ .wrap{flex-direction:column;width:100%;}
  nav{position:static;width:auto;max-height:none;border-right:none;border-bottom:1px solid var(--line);}
  nav.collapsed .links{display:none;}
- .menu-btn{display:block;width:100%;background:var(--card);border:1px solid var(--line);color:var(--fg);padding:10px;border-radius:8px;font-size:15px;cursor:pointer;}
- main{padding:20px;}
+ .menu-btn{display:block;width:100%;background:var(--card);border:1px solid var(--line);color:var(--fg);padding:12px;border-radius:8px;font-size:15px;cursor:pointer;min-height:44px;}
+ main{padding:18px;width:100%;}
  .fbox{white-space:normal;}
+ table{font-size:13px;}
+ th,td{padding:6px 8px;}
+}
+@media (max-width:480px){
+ .topbar{padding:0 8px;gap:6px;}
+ .theme-btn{width:40px;height:40px;}
+ h1{font-size:23px;}
+ h2{font-size:19px;}
 }
 </style></head><body>
 <div class="topbar">
@@ -920,9 +929,9 @@ hr{border:none;border-top:1px solid var(--line);margin:1.4em 0;}
 <hr>
 <h3 id="h-head-wise-set-off-carry-forward-summary">H. Head-wise Set-off &amp; Carry Forward Summary</h3>
 <ul><li><strong>Key rule(s) — Order and time-limits by head:</strong></li></ul>
-<p>| Head / Loss type | Step 1 (current year) | Step 2 | Carry forward period | |---|---|---|---| | Salary | Loss not possible | – | – | | House Property | Intra-head, then inter-head (max ₹2,00,000) | – | <strong>8 AYs</strong> (Sec 71B) | | Speculative business | Set off only vs speculative business income | – | <strong>4 AYs</strong> (Sec 73) | | Specified business (35AD) | Set off only vs specified business income | – | <strong>Unlimited</strong> (Sec 73A) | | Any other business loss | Intra-head, then inter-head (except salary) | – | <strong>8 AYs</strong> (Sec 72) | | STCL | Set off vs STCG or LTCG | – | <strong>8 AYs</strong> (Sec 74) | | LTCL | Set off vs LTCG only | – | <strong>8 AYs</strong> (Sec 74) | | Race-horse owning/maintaining loss | Set off only vs race-horse income | – | <strong>4 AYs</strong> (Sec 74A) | | Other IFOS losses | Intra-head, then inter-head | Carry forward <strong>not allowed</strong> | – | | Unabsorbed depreciation | Set off vs any head except salary | – | <strong>Unlimited</strong> (Sec 32(2)) |</p>
+<div class="tw"><table><thead><tr><th>Head / Loss type</th><th>Step 1 (current year)</th><th>Step 2</th><th>Carry forward period</th></tr></thead><tbody><tr><td>Salary</td><td>Loss not possible</td><td>–</td><td>–</td></tr><tr><td>House Property</td><td>Intra-head, then inter-head (max ₹2,00,000)</td><td>–</td><td><strong>8 AYs</strong> (Sec 71B)</td></tr><tr><td>Speculative business</td><td>Set off only vs speculative business income</td><td>–</td><td><strong>4 AYs</strong> (Sec 73)</td></tr><tr><td>Specified business (35AD)</td><td>Set off only vs specified business income</td><td>–</td><td><strong>Unlimited</strong> (Sec 73A)</td></tr><tr><td>Any other business loss</td><td>Intra-head, then inter-head (except salary)</td><td>–</td><td><strong>8 AYs</strong> (Sec 72)</td></tr><tr><td>STCL</td><td>Set off vs STCG or LTCG</td><td>–</td><td><strong>8 AYs</strong> (Sec 74)</td></tr><tr><td>LTCL</td><td>Set off vs LTCG only</td><td>–</td><td><strong>8 AYs</strong> (Sec 74)</td></tr><tr><td>Race-horse owning/maintaining loss</td><td>Set off only vs race-horse income</td><td>–</td><td><strong>4 AYs</strong> (Sec 74A)</td></tr><tr><td>Other IFOS losses</td><td>Intra-head, then inter-head</td><td>Carry forward <strong>not allowed</strong></td><td>–</td></tr><tr><td>Unabsorbed depreciation</td><td>Set off vs any head except salary</td><td>–</td><td><strong>Unlimited</strong> (Sec 32(2))</td></tr></tbody></table></div>
 <ul><li><strong>Consolidated carry-forward table:</strong></li></ul>
-<p>| Section | Loss carried forward | Set off against (in future AY) | Time limit | Return filed on time required? | |---|---|---|---|---| | 71B | Loss from house property | Income from house property | 8 years | No | | 72 | Normal business loss | Any business income | 8 years | Yes | | 73 | Speculative business loss | Speculative business income | 4 years | Yes | | 73A | Specified business loss (35AD) | Specified business income | Unlimited | Yes | | 74 | Short-term capital loss | STCG &amp; LTCG | 8 years | Yes | | 74 | Long-term capital loss | LTCG only | 8 years | Yes | | 74A | Loss from owning &amp; maintaining race horses | Race-horse income | 4 years | Yes | | 32(2) | Unabsorbed depreciation | Any head of income except salary | Unlimited | No |</p>
+<div class="tw"><table><thead><tr><th>Section</th><th>Loss carried forward</th><th>Set off against (in future AY)</th><th>Time limit</th><th>Return filed on time required?</th></tr></thead><tbody><tr><td>71B</td><td>Loss from house property</td><td>Income from house property</td><td>8 years</td><td>No</td></tr><tr><td>72</td><td>Normal business loss</td><td>Any business income</td><td>8 years</td><td>Yes</td></tr><tr><td>73</td><td>Speculative business loss</td><td>Speculative business income</td><td>4 years</td><td>Yes</td></tr><tr><td>73A</td><td>Specified business loss (35AD)</td><td>Specified business income</td><td>Unlimited</td><td>Yes</td></tr><tr><td>74</td><td>Short-term capital loss</td><td>STCG &amp; LTCG</td><td>8 years</td><td>Yes</td></tr><tr><td>74</td><td>Long-term capital loss</td><td>LTCG only</td><td>8 years</td><td>Yes</td></tr><tr><td>74A</td><td>Loss from owning &amp; maintaining race horses</td><td>Race-horse income</td><td>4 years</td><td>Yes</td></tr><tr><td>32(2)</td><td>Unabsorbed depreciation</td><td>Any head of income except salary</td><td>Unlimited</td><td>No</td></tr></tbody></table></div>
 <ul><li><strong>Concept:</strong> This table is the single most exam-critical reference in the chapter — memorize the section, the permissible set-off income, the time limit, and whether timely ROI filing is a precondition.</li></ul>
 <ul><li><strong>Pitfalls / exam tips:</strong></li><li>Losses under Sec 71B, 72, 73, 73A, 74, 74A generally require the <strong>original return to be filed within the due date u/s 139(1)</strong> to be eligible for carry forward (Sec 80) — <strong>except</strong> house property loss (71B) and unabsorbed depreciation (32(2)), which can be carried forward even if the return is filed late.</li><li>Losses under IFOS (other than race-horse loss) <strong>cannot be carried forward at all</strong> — use it in the current year or lose it.</li><li><strong>Order of set-off in a year</strong> (CBDT-clarified sequence): (1) current year depreciation, (2) brought-forward business loss, (3) unabsorbed depreciation.</li><li>Where there is current-year income under a head and an eligible brought-forward loss under another head, the <strong>current year's loss/deduction is set off first</strong>, before absorbing brought-forward losses (CBDT circular position — maximizes the brought-forward loss preserved).</li><li>Brought-forward business loss can be set off <strong>even if that business is discontinued</strong> in the year of set-off.</li><li><strong>No set-off/carry-forward</strong> for losses from lottery, card games, races, gambling, betting etc.; and such losses <strong>cannot be adjusted against Sec 115BB income</strong> (winnings from lotteries, crossword puzzles, card games, races, TV game shows, etc.).</li><li><strong>Sec 115BBE:</strong> no set-off of any loss is allowed against unexplained income/investment/money/expenditure taxed under Sec 68 to 69D.</li><li>If income under a head is otherwise <strong>exempt</strong>, any corresponding loss also gets no tax treatment (i.e., ignore it — it cannot be set off or carried forward).</li></ul>
 <hr>
@@ -933,7 +942,7 @@ hr{border:none;border-top:1px solid var(--line);margin:1.4em 0;}
 <hr>
 <h3 id="j-carry-forward-on-amalgamation-demerger-succession-sec-72a-sec-21b219aa">J. Carry Forward on Amalgamation, Demerger &amp; Succession (Sec 72A, Sec 2(1B)/2(19AA))</h3>
 <ul><li><strong>Key rule(s) — carry forward matrix:</strong></li></ul>
-<p>| Case | Accumulated business loss of | Carried forward by | Time limit | |---|---|---|---| | Amalgamation [Sec 2(1B)] | Amalgamating Co. | Amalgamated Co. | Fresh 8 years<em> | | Demerger [Sec 2(19AA)] | Demerged Co. | Resulting Co. | Remaining part of original 8 years | | Conversion of firm/proprietary concern into company [Sec 47(xiii)/(xiv)] | Firm/proprietary concern | Successor company | Fresh 8 years</em> | | Conversion of unlisted company into LLP [Sec 47(xiiib)] | Unlisted company | LLP | Fresh 8 years* |</p>
+<div class="tw"><table><thead><tr><th>Case</th><th>Accumulated business loss of</th><th>Carried forward by</th><th>Time limit</th></tr></thead><tbody><tr><td>Amalgamation [Sec 2(1B)]</td><td>Amalgamating Co.</td><td>Amalgamated Co.</td><td>Fresh 8 years*</td></tr><tr><td>Demerger [Sec 2(19AA)]</td><td>Demerged Co.</td><td>Resulting Co.</td><td>Remaining part of original 8 years</td></tr><tr><td>Conversion of firm/proprietary concern into company [Sec 47(xiii)/(xiv)]</td><td>Firm/proprietary concern</td><td>Successor company</td><td>Fresh 8 years*</td></tr><tr><td>Conversion of unlisted company into LLP [Sec 47(xiiib)]</td><td>Unlisted company</td><td>LLP</td><td>Fresh 8 years*</td></tr></tbody></table></div>
 <p>\* <mark class="verify">⚠️ VERIFY</mark> — <strong>effective for amalgamations/successions on or after 1/4/2025</strong>, the source states the "fresh 8 years" benefit is replaced by carry-forward for only the <strong>remaining part of the original 8-year period</strong> (i.e., no fresh lease of life). This aligns with a Finance Act 2025 change; confirm against the Finance Act 2025 text/CBDT notification before relying on it in a live exam answer, since it could not be freshly cross-checked against a primary source in this session.</p>
 <ul><li><strong>Unabsorbed depreciation</strong> can be carried forward by the Amalgamated Co./Resulting Co./Successor Co./LLP for an <strong>unlimited period</strong> in all the above cases.</li><li>Only <strong>business losses</strong> (excluding speculative business loss) are eligible to be carried forward by the successor entity in these restructuring situations.</li></ul>
 <ul><li><strong>Sec 72A applicability</strong> (amalgamation of):</li></ul>
