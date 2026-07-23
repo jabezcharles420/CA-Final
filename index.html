@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AFM — CA Final Quick Reference</title>
+<style>
+:root{--bg:#fff;--fg:#1a1d24;--muted:#5b6472;--card:#f6f7f9;--line:#e3e6ea;--accent:#2f6bff;--fbg:#eef3ff;--fbd:#2f6bff;--warn:#fff3cd;--warnfg:#7a5b00;--code:#eef1f4;}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1216;--fg:#e6e9ef;--muted:#9aa4b2;--card:#171b21;--line:#262c34;--accent:#6ea0ff;--fbg:#141c2e;--fbd:#3a63b8;--warn:#3a3213;--warnfg:#ffd873;--code:#1a1f26;}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+.wrap{display:flex;max-width:1180px;margin:0 auto;}
+nav{position:sticky;top:0;align-self:flex-start;width:260px;max-height:100vh;overflow:auto;padding:20px 14px;border-right:1px solid var(--line);}
+nav h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 10px;}
+nav a{display:block;padding:6px 10px;border-radius:8px;color:var(--fg);text-decoration:none;font-size:14px;}
+nav a:hover{background:var(--card);color:var(--accent);}
+main{flex:1;min-width:0;padding:28px 30px 80px;}
+h1{font-size:26px;line-height:1.25;margin:.2em 0 .3em;}
+h2{font-size:21px;margin:1.6em 0 .5em;padding-top:.4em;border-top:2px solid var(--line);}
+section:first-of-type h2{border-top:none;}
+h3{font-size:17px;margin:1.3em 0 .3em;color:var(--accent);}
+h4{font-size:15px;margin:1em 0 .2em;}
+p{margin:.5em 0}
+blockquote{margin:.6em 0;padding:.5em .9em;background:var(--card);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;color:var(--muted);}
+code{background:var(--code);padding:.1em .35em;border-radius:5px;font-size:.9em;}
+.tw{overflow-x:auto;margin:.7em 0;}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:340px;}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+th{background:var(--card);}
+.fbox{background:var(--fbg);border-left:4px solid var(--fbd);border-radius:0 8px 8px 0;padding:12px 16px;margin:.7em 0;font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;font-size:15px;overflow-x:auto;white-space:nowrap;}
+.imath{font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;margin:0 .25em;}
+.frac .num{border-bottom:1.5px solid currentColor;padding:0 .35em;}
+.frac .den{padding:0 .35em;}
+.rad{border-top:1.5px solid currentColor;padding:0 .2em;}
+mark.verify{background:var(--warn);color:var(--warnfg);padding:.05em .35em;border-radius:5px;font-weight:600;}
+hr{border:none;border-top:1px solid var(--line);margin:1.4em 0;}
+.badge{display:inline-block;background:var(--warn);color:var(--warnfg);font-size:12px;font-weight:600;padding:.2em .6em;border-radius:20px;margin-left:.4em;vertical-align:middle;}
+.menu-btn{display:none;}
+@media (max-width:820px){
+ .wrap{flex-direction:column;}
+ nav{position:static;width:auto;max-height:none;border-right:none;border-bottom:1px solid var(--line);}
+ nav.collapsed .links{display:none;}
+ .menu-btn{display:block;width:100%;background:var(--card);border:1px solid var(--line);color:var(--fg);padding:10px;border-radius:8px;font-size:15px;cursor:pointer;}
+ main{padding:18px;}
+ .fbox{white-space:normal;}
+}
+</style></head><body>
+<div class="wrap">
+<nav id="nav" class="collapsed">
+ <button class="menu-btn" onclick="document.getElementById('nav').classList.toggle('collapsed')">☰ Chapters</button>
+ <div class="links"><h2>Contents</h2><a href="#contents">Contents</a><a href="#00-basics-of-afm">00. Basics of AFM</a><a href="#02-risk-management">02. Risk Management</a><a href="#04-security-analysis">04. Security Analysis</a><a href="#07-securitization">07. Securitization</a><a href="#08-mutual-funds">08. Mutual Funds</a><a href="#11-international-financial-management">11. International Financial Management</a><a href="#14-mergers-acquisitions-corporate-restructuring">14. Mergers, Acquisitions &amp; Corporate Restructuring</a><a href="#formulas-to-double-check">⚠️ Formulas to double-check</a></div>
+</nav>
+<main><h1>AFM — CA Final Quick Reference (Sample — 7 of 16 chapters)</h1>
+<p>Built from OCR'd concept notes (CA Ajay Agarwal, May/Nov 2025 syllabus) and web-verified against ICAI/SEBI/RBI sources. Any line marked "<mark class="verify">⚠️ VERIFY</mark>" means double-check it against the original notes before relying on it. The remaining 9 chapters are pending and will be added in a later build.</p>
+</section><section><h2 id="contents">Contents</h2>
+<ol>
+<li><a href="#00-basics-of-afm">Basics of AFM</a></li>
+<li><a href="#02-risk-management">Risk Management</a></li>
+<li><a href="#04-security-analysis">Security Analysis</a></li>
+<li><a href="#07-securitization">Securitization</a></li>
+<li><a href="#08-mutual-funds">Mutual Funds</a></li>
+<li><a href="#11-international-financial-management">International Financial Management</a></li>
+<li><a href="#14-mergers-acquisitions--corporate-restructuring">Mergers, Acquisitions &amp; Corporate Restructuring</a></li>
+</ol>
+<p><em>Coming soon:</em> 01 Financial Policy &amp; Corporate Strategy, 03 Advanced Capital Budgeting, 05 Security Valuation, 06 Portfolio Management, 09 Derivatives, 10 Foreign Exchange &amp; Risk Mgmt, 12 Interest Rate Risk, 13 Business Valuation, 15 Startup Finance.</p>
+<hr>
+</section><section><h2 id="00-basics-of-afm">00. Basics of AFM</h2>
+<blockquote><strong>Where it fits:</strong> the toolkit chapter — the financial-statement structure, ratios, interest-rate conventions, calculator technique and time-value-of-money mechanics that every later AFM topic (capital budgeting, valuation, portfolio, derivatives, forex) silently assumes.</blockquote>
+<h3>Financial Statements for AFM</h3>
+<p><strong>Income-statement ladder (AFM convention):</strong></p>
+<div class="fbox">Sales - COGS = Gross Profit</div>
+<div class="fbox">Gross Profit - Operating Expenses = EBIT (PBIT / Operating Profit)</div>
+<div class="fbox">EBIT - Interest = EBT (PBT) ;   EBT - Tax = EAT (PAT)</div>
+<div class="fbox">EAT - Preference Dividend = EATESH</div>
+<div class="fbox">EATESH - Equity Dividend = Retained Earnings</div>
+<div class="fbox">NOPAT = EBIT (1-t)</div>
+<p><strong>Balance-sheet identities:</strong></p>
+<div class="fbox">Total Assets = Fixed Assets + Current Assets</div>
+<div class="fbox">Total Liabilities = Debt + Current Liabilities</div>
+<div class="fbox">Working Capital = Current Assets - Current Liabilities</div>
+<div class="fbox">Net Worth = Share Capital + Reserves \& Surplus - Preliminary Exp. = Total Assets - Total Liabilities</div>
+<div class="fbox">Capital Employed = Equity + Debt = Total Assets - Current Liabilities</div>
+<p><strong>Concept:</strong> A slimmed statement used only to trace where each ratio's numerator/denominator sits. NOPAT = the after-tax operating profit available to <em>all</em> capital providers (debt + equity), so interest is <strong>not</strong> deducted — it is the base cash flow for DCF/EVA.</p>
+<p><strong>Pitfalls / exam tips:</strong></p>
+<ul>
+<li>Unless told otherwise, treat all "Share Capital" as <strong>equity</strong>; add preference separately only when the question gives it.</li>
+<li>Preliminary expenses are a fictitious asset — always <strong>subtract</strong> them from Net Worth and Capital Employed.</li>
+<li>NOPAT ≠ PAT: PAT is <em>after</em> interest, NOPAT is <em>before</em> interest.</li>
+</ul>
+<div class="tw"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td>EBIT</td><td>Earnings Before Interest &amp; Tax = Operating Profit</td></tr><tr><td>EAT / PAT</td><td>Earnings/Profit After Tax (after interest &amp; tax)</td></tr><tr><td>EATESH</td><td>Earnings Available To Equity Shareholders = PAT − Preference Dividend</td></tr><tr><td>Net Worth</td><td>Equity funds = Book Value = Shareholders' funds</td></tr><tr><td>Capital Employed</td><td>Long-term funds = Equity + Debt</td></tr></tbody></table></div>
+<h3>Profitability &amp; Margin Ratios</h3>
+<div class="fbox">GP Ratio=Gross ProfitSales×100     COGS Ratio=COGSSales×100 = 100% - GP Ratio</div>
+<div class="fbox">Operating Profit (Margin) Ratio=EBITSales×100</div>
+<div class="fbox">Operating Ratio=COGS+Operating ExpensesSales×100 = 100% - Operating Profit Ratio</div>
+<div class="fbox">Net Profit Ratio=Net Profit (PAT)Sales×100</div>
+<p><strong>Concept:</strong> Each margin expresses a profit line as a % of sales; higher is better.</p>
+<p><strong>Pitfalls:</strong> Operating Ratio and Operating Profit Ratio are complements (sum to 100%) — don't confuse the two.</p>
+<h3>Capital-Structure / Leverage Ratios</h3>
+<div class="fbox">Debt Ratio=DebtEquity+Debt     Equity Ratio=EquityEquity+Debt</div>
+<div class="fbox">Debt-Equity Ratio=DebtEquity</div>
+<div class="fbox">Capital Gearing Ratio=Debt+Preference Share CapitalEquity Share Capital+Reserves \& Surplus</div>
+<p><strong>Concept:</strong> Measure reliance on fixed-cost capital. Capital gearing groups <em>all</em> fixed-return capital (debt <strong>and</strong> preference) against equity — lower is safer.</p>
+<p><strong>Pitfalls:</strong></p>
+<ul>
+<li>Debt Ratio + Equity Ratio = 1 (both use Capital Employed as denominator); Debt-Equity uses only equity below the line.</li>
+<li>Capital gearing puts <strong>preference capital in the numerator</strong> (it carries a fixed dividend) — a classic slip is to leave it in equity.</li>
+</ul>
+<h3>Activity (Turnover) Ratios</h3>
+<div class="fbox">Assets TO=SalesAssets    Fixed Assets TO=SalesFixed Assets    Current Assets TO=SalesCurrent Assets</div>
+<div class="fbox">Inventory TO=COGSStock     Debtors TO=Credit SalesDebtors     Assets-to-Sales=AssetsSales</div>
+<p><strong>Concept:</strong> How many rupees of sales each rupee of asset generates (expressed as "times", or ×100 for %). Higher = more efficient asset use.</p>
+<p><strong>Pitfalls:</strong></p>
+<ul>
+<li>Inventory turnover uses <strong>COGS</strong>, not Sales (matches inventory's cost basis).</li>
+<li>Assets-to-Sales is simply the reciprocal of Assets Turnover.</li>
+</ul>
+<h3>Coverage Ratios</h3>
+<div class="fbox">Interest Coverage Ratio=EBITInterest  [higher = safer]</div>
+<div class="fbox">Interest \& Fixed-Dividend Coverage=PAT+InterestInterest+Preference Dividend  [higher = safer]</div>
+<p><strong>Concept:</strong> Ability of earnings to service fixed financing charges.</p>
+<p><strong>Pitfalls:</strong> Interest Coverage takes <strong>EBIT</strong> (pre-interest, pre-tax). The combined coverage above is the book's simplified form (PAT add-back); if a question specifies a strict pre-tax basis, gross-up preference dividend by ÷(1−t) — read the requirement.</p>
+<h3>Per-Share &amp; Market-Value Ratios</h3>
+<div class="fbox">EPS=EATESHNo. of Equity Shares     DPS=Equity DividendNo. of Equity Shares</div>
+<div class="fbox">BVPS=Book Value (Net Worth)No. of Equity Shares     MPS=Market Price per Equity Share</div>
+<div class="fbox">Dividend Payout=Equity DividendEATESH×100=DPSEPS×100=100%-Retention Ratio</div>
+<div class="fbox">Retention Ratio=Retained EarningsEATESH×100=100%-Payout</div>
+<div class="fbox">Dividend Yield=DPSMPS×100     P/E Ratio=MPSEPS</div>
+<div class="fbox">Market Capitalisation=MPS×No. of Equity Shares=P/E×EATESH</div>
+<p><strong>Concept:</strong> Bridge accounting output (EPS, BVPS) to market value (MPS, P/E, market cap).</p>
+<p><strong>Pitfalls:</strong> Payout Ratio + Retention Ratio = 100% — a fast cross-check. Dividend Yield is on <strong>market price</strong>; dividend rate (%) declared is on <strong>face value</strong> — never interchange.</p>
+<h3>Return Ratios</h3>
+<div class="fbox">ROCE=EBITCapital Employed×100</div>
+<div class="fbox">ROE=EATESHNet Worth×100=EPSBVPS×100</div>
+<p><strong>Concept:</strong> ROCE = return to all capital providers (uses EBIT); ROE = return to equity only (uses EATESH).</p>
+<p><strong>Pitfalls:</strong> ROCE takes EBIT over Capital Employed; ROE takes EATESH over Net Worth — matching numerator to the capital base is where marks are lost.</p>
+<div class="tw"><table><thead><tr><th>Note</th><th>Relation</th></tr></thead><tbody><tr><td>ROE on market price</td><td><span class="imath">ROE=EPSMPS</span> = earnings yield <span class="imath">=1P/E</span></td></tr></tbody></table></div>
+<h3>Interpretation of Dividend</h3>
+<div class="tw"><table><thead><tr><th>Basis</th><th>Metric</th></tr></thead><tbody><tr><td>On <strong>Face Value</strong></td><td>Dividend rate declared (%)</td></tr><tr><td>On <strong>Market Price</strong></td><td>Dividend Yield</td></tr><tr><td>On <strong>Earnings</strong></td><td>Dividend Payout</td></tr></tbody></table></div>
+<p><strong>Exam tip:</strong> "20% dividend" means 20% of <em>face value</em>, not of market price or EPS.</p>
+<h3>Interpretation of Interest Rate</h3>
+<ul>
+<li><strong>100 basis points (bps) = 1%</strong> (so 1 bp = 0.01%).</li>
+<li>Every rate is <strong>per annum (p.a.)</strong> unless the question explicitly says otherwise — even "6-month LIBOR is 10%" or "interest for 6-month borrowing is 10%" means 10% <strong>p.a.</strong> Only "1% per month" is p.m.</li>
+</ul>
+<p><strong>Pitfall:</strong> For a 6-month period at a 10% p.a. rate, apply 5% for the period — don't apply the full 10%.</p>
+<h3>Basic Mathematics (Powers &amp; Calculator Technique)</h3>
+<div class="fbox">a<sup>-n</sup>=1a<sup>n</sup>     √<span class="rad">a</span>=a<sup>1/2</sup></div>
+<p><strong>Non-scientific calculator technique (exam hall):</strong></p>
+<ul>
+<li><strong>Whole power</strong> <span class="imath">a<sup>n</sup></span>: type base → press ×, then press <strong>= (n−1) times</strong>. (e.g. <span class="imath">6<sup>4</sup></span>: 6 × = = = → 1296.)</li>
+<li><strong>"Dirty"/fractional power</strong> <span class="imath">a<sup>p</sup></span> (e.g. <span class="imath">6<sup>0.30</sup></span>): type base → press <strong>√ 12 times</strong> → <strong>−1</strong> → <strong>× power</strong> → <strong>+1</strong> → press <strong>× = 12 times</strong>.</li>
+</ul>
+<p><strong>Concept:</strong> ICAI allows only a basic calculator; the √-12-times routine approximates fractional exponents (used everywhere in TVM, IRR interpolation, volatility).</p>
+<p><strong>Pitfalls:</strong> BODMAS order — <strong>B</strong>racket, <strong>O</strong>rders (powers/roots), <strong>D</strong>ivide, <strong>M</strong>ultiply, <strong>A</strong>dd, <strong>S</strong>ubtract. Sign rules: <span class="imath">(-)×(-)=(+)</span>; <span class="imath">5+(-3)=2</span>.</p>
+<h3>Time Value of Money</h3>
+<div class="fbox">FV=PV (1+R)<sup>t</sup> ;    FVF<sub>t</sub>=(1+R)<sup>t</sup></div>
+<div class="fbox">PV=FV(1+R)<sup>t</sup>=Cash flow<sub>t</sub>×PVF<sub>t</sub> ;    PVF<sub>t</sub>=1(1+R)<sup>t</sup></div>
+<p><strong>Uneven cash flows (limited period):</strong></p>
+<div class="fbox">PV=Σ<sub>t=1</sub><sup>n</sup>CF<sub>t</sub>×PVF<sub>t</sub>   (use a Year / CF / PVF / PV table)</div>
+<p><strong>Even cash flows (annuity):</strong></p>
+<div class="fbox">PV=Annuity×PVAF<sub>n,r</sub></div>
+<p><strong>Perpetuity (level, forever):</strong></p>
+<div class="fbox">PV=Perpetual Cash FlowR</div>
+<p><strong>Growing perpetuity (Gordon):</strong></p>
+<div class="fbox">PV=First Perpetual Cash FlowR-g</div>
+<p><strong>Mixed: uneven CF for a limited period, then perpetuity from year (t) onward:</strong></p>
+<div class="fbox">PV=Σ CF×PVF<sub>explicit years</sub>+TV<sub>(t-1)</sub>×PVF<sub>(t-1)</sub></div>
+<div class="fbox">TV<sub>(t-1)</sub>=CF<sub>t</sub>R  (level)    TV<sub>(t-1)</sub>=CF<sub>(t-1)</sub>(1+g)R-g  (growing)</div>
+<p><strong>Concept:</strong> Terminal value sits <strong>one year before the first perpetual cash flow</strong> (i.e. at t−1), so it must still be discounted back by <span class="imath">PVF<sub>(t-1)</sub></span>. For the growing case the first perpetual cash flow <span class="imath">=CF<sub>(t-1)</sub>×(1+g)</span>.</p>
+<p><strong>Worked check (level TV):</strong> CF₁₋₃ = 1,000 / 2,000 / 5,000 then 7,000 forever from yr 4, R = 10%. Explicit PV = 6,316; <span class="imath">TV<sub>3</sub> = 7,000/0.10 = 70,000</span>; discount ×0.751 = 52,570; <strong>Total PV ≈ 58,886</strong>.</p>
+<p><strong>Worked check (growing TV):</strong> same CF₁₋₃, then grows 2% from yr 4, R = 10%. <span class="imath">TV<sub>3</sub> = 5,000(1.02)/(0.10-0.02) = 63,750</span>; ×0.751 = 47,876; <strong>Total PV ≈ 54,192</strong>. Simple growing-perpetuity example: <span class="imath">1,000/(0.10-0.02)=12,500</span>.</p>
+<p><strong>Pitfalls / exam tips:</strong></p>
+<ul>
+<li>Carry <strong>PVF to 3 decimals</strong> unless the question says otherwise; 3-year PVF @10% = <strong>0.751</strong> (the book's table once printed 0.757 — use 0.751).</li>
+<li>The single most common error: forgetting that the perpetuity/Gordon formula gives value at <strong>t−1</strong>, then failing to discount that TV to today.</li>
+<li>Growing perpetuity is valid only when <span class="imath">R>g</span>; if <span class="imath">g≥ R</span> the formula breaks down.</li>
+<li>Match the discount period to the compounding frequency (semi-annual data → half-year rate, double the periods).</li>
+</ul>
+<h3>References</h3>
+<ol>
+<li><strong>ICAI CA Final – Advanced Financial Management (Paper 2) Study Material, May 2025 onwards</strong> — the exam authority; base for statement structure, ratios and TVM treatment.</li>
+<li><strong>ICAI BOS Ratio Analysis (standard format) PDF, live.icai.org</strong> — backs the ratio set incl. Capital Gearing = (Debt + Preference)/Equity.</li>
+<li><strong>Wall Street Prep / Investopedia — NOPAT &amp; Growing Perpetuity</strong> — backs NOPAT = EBIT(1−t) and PV = CF₁/(R−g).</li>
+<li><strong>LibreTexts Finance / Wall Street Oasis — Terminal Value timing</strong> — confirms a perpetuity is valued one period before its first cash flow and must be discounted back.</li>
+<li><strong>Standard corporate-finance references (Gordon growth model, annuity/PVAF, PVF tables)</strong> — TVM discounting mechanics.</li>
+</ol>
+<hr>
+</section><section><h2 id="02-risk-management">02. Risk Management</h2>
+<blockquote><strong>Where it fits:</strong> Risk Management is the AFM foundation topic that classifies the risks a firm faces and quantifies market/loss risk — chiefly via the standard-normal Z-score and Value at Risk (VaR) — before the hedging chapters (derivatives, forex, interest-rate) apply mitigation tools.</blockquote>
+<h3>Types of Risk Faced by an Organization</h3>
+<p><strong>Concept:</strong> Broad taxonomy examiners expect you to name and one-line define.</p>
+<div class="tw"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td>Strategic Risk</td><td>Firm's strategy becomes less effective; it struggles to reach its goals.</td></tr><tr><td>Compliance Risk</td><td>Failure to comply with rules/regulations, leading to penalties.</td></tr><tr><td>Operational Risk</td><td>Internal risk — failure to handle day-to-day operations; relates to 'people' and 'process'.</td></tr><tr><td>Financial Risk</td><td>Unexpected changes in financial conditions — prices, exchange rate, credit rating, interest rate.</td></tr></tbody></table></div>
+<p><strong>Evaluation of financial risk (perspectives):</strong></p>
+<ul>
+<li><strong>Stakeholder:</strong> views financial gearing (ratio of debt in capital structure) as risk.</li>
+<li><strong>Company:</strong> excessive borrowing can force it into liquidation.</li>
+<li><strong>Government:</strong> viewed as failure of any bank.</li>
+</ul>
+<h3>Classification of Financial Risk</h3>
+<p><strong>Concept:</strong> ICAI splits financial risk into counter-party, political/country, and interest-rate risk — present each as Meaning / Assessment / Mitigation.</p>
+<div class="tw"><table><thead><tr><th>Type</th><th>Meaning</th><th>Key mitigation</th></tr></thead><tbody><tr><td>Counter-party risk</td><td>Non-honouring of obligations by counter party (also covers credit risk).</td><td>Due diligence, know/review exposure &amp; credit limits, don't over-commit, performance guarantees, rapid action on default.</td></tr><tr><td>Political (Country) risk</td><td>Adverse host-government action against an overseas investor — confiscation, rationing of remittance, currency-conversion/borrowing restrictions, price control.</td><td>Local sourcing of materials &amp; labour, joint ventures, local financing, prior negotiations.</td></tr><tr><td>Interest-rate risk</td><td>Change in interest rates altering the value of assets &amp; liabilities.</td><td>Assessed via monetary policy, government action (e.g. demonetisation), economic growth; hedged in later chapters (FRA, swaps, futures).</td></tr></tbody></table></div>
+<p><strong>Exam tip:</strong> Mark schemes reward the Meaning / Assessment / Mitigation structure — write all three heads even under time pressure.</p>
+<h3>Standard Normal Distribution &amp; Z-Score</h3>
+<p><strong>Key formula:</strong></p>
+<div class="fbox"> Z = <span class="frac"><span class="num">x - μ</span><span class="den">σ</span></span> </div>
+<p><strong>Concept:</strong> Converts a required value into standard-deviation units; the probability is then read off the standard-normal table. Used inside VaR and in probability-of-loss questions.</p>
+<p><strong>Worked logic (book example):</strong> Mean wealth ₹5 lakh, σ = ₹1.5 lakh. For P(wealth &lt; ₹2 lakh): Z = (2 − 5)/1.5 = −2.</p>
+<ul>
+<li>If <em>area from mean to Z</em> = 0.4772 → P(&lt; 2L) = 0.50 − 0.4772 = <strong>0.0228 (2.28%)</strong>; P(&gt; 2L) = 0.50 + 0.4772 = <strong>0.9772 (97.72%)</strong>.</li>
+<li>If <em>cumulative area up to Z=2</em> = 0.9772 → P(&lt; 2L) = 1 − 0.9772 = 0.0228; P(&gt; 2L) = 0.9772.</li>
+<li>If <em>one-tail area</em> = 0.0228 → P(&lt; 2L) = 0.0228; P(&gt; 2L) = 1 − 0.0228 = 0.9772.</li>
+</ul>
+<p><strong>Pitfalls / exam tips:</strong></p>
+<ul>
+<li>Identify which table is given: <em>area-from-mean</em> (0.4772), <em>cumulative</em> (0.9772), or <em>one-tail</em> (0.0228) — each combines differently.</li>
+<li>Negative Z lies left of the mean; by symmetry left-tail(−2) = right-tail(+2).</li>
+</ul>
+<h3>Value at Risk (VaR)</h3>
+<p><strong>Key formula(s):</strong></p>
+<div class="fbox"> VaR<sub>security</sub> = Investment<sub>s</sub> × σ<sub>s</sub> × √<span class="rad">t</span> × Z </div>
+<div class="fbox"> VaR<sub>portfolio</sub> = Investment<sub>p</sub> × σ<sub>p</sub> × √<span class="rad">t</span> × Z </div>
+<div class="fbox"> σ<sub>p</sub> = w<sub>A</sub><sup>2</sup>σ<sub>A</sub><sup>2</sup> + w<sub>B</sub><sup>2</sup>σ<sub>B</sub><sup>2</sup> + 2 w<sub>A</sub> w<sub>B</sub> ρ<sub>AB</sub> σ<sub>A</sub> σ<sub>B</sub> </div>
+<p><strong>Concept:</strong> VaR is the expected maximum loss on a share / portfolio over a given horizon at a chosen confidence level (parametric / variance-covariance method).</p>
+<div class="tw"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td>σ_s / σ_p</td><td>Daily standard deviation of the security / portfolio</td></tr><tr><td>t</td><td>Number of days over which the loss is measured (√t scaling)</td></tr><tr><td>Z</td><td>Z-score for the chosen confidence, one-tailed (95% → 1.645, 99% → 2.326)</td></tr><tr><td>ρ_AB</td><td>Correlation coefficient between assets A and B</td></tr></tbody></table></div>
+<p><strong>Pitfalls / exam tips:</strong></p>
+<ul>
+<li>σ must be <em>daily</em> to pair with √t in days; if σ is annual, keep t in years — stay consistent.</li>
+<li>Use the <strong>one-tailed</strong> Z for VaR (loss side only), not the two-tailed value.</li>
+<li>Portfolio σ_p is <strong>not</strong> the weighted average of the individual σ's — use the MPT formula; correlation below 1 reduces it.</li>
+</ul>
+<h3>References</h3>
+<ol>
+<li><strong>ICAI CA Final AFM Study Material — Risk Management</strong> (Paper 2: Advanced Financial Management, applicable May 2024 onward / 2025-26 syllabus): backs the risk taxonomy, financial-risk classification, and the Z-score / VaR treatment.</li>
+<li><strong>Parametric (variance-covariance) VaR &amp; square-root-of-time rule</strong> — standard finance / CFA curriculum: VaR = Value × Z × σ × √t; one-tailed z of 1.645 (95%) and 2.326 (99%).</li>
+<li><strong>Markowitz Modern Portfolio Theory</strong> — two-asset portfolio standard deviation including the correlation term.</li>
+<li><strong>Standard normal distribution table</strong> — Z = (x − μ)/σ and area / cumulative / one-tail probability readings.</li>
+</ol>
+<hr>
+</section><section><h2 id="04-security-analysis">04. Security Analysis</h2>
+<blockquote><strong>Where it fits:</strong> Security Analysis is the toolkit an investor uses to decide <em>buy / sell / hold</em> on a single security. In AFM it bridges into Portfolio Management and Security Valuation — fundamental analysis (intrinsic value) is covered under Security Valuation, while this chapter concentrates on <strong>technical analysis</strong>, <strong>moving-average trading rules</strong>, and <strong>tests of the Efficient Market Hypothesis</strong> (run test, autocorrelation).</blockquote>
+<hr>
+<h3>Meaning &amp; Approaches of Security Analysis</h3>
+<p><strong>Concept:</strong> Systematic analysis of security prices so an investor can take a purchase/sale decision. Two broad approaches:</p>
+<div class="tw"><table><thead><tr><th>Approach</th><th>Basis</th><th>Where studied</th></tr></thead><tbody><tr><td><strong>Fundamental Analysis</strong></td><td>Intrinsic worth from economy → industry → company; assumes price depends on future dividends/earnings</td><td>Security Valuation chapter (touched below)</td></tr><tr><td><strong>Technical Analysis</strong></td><td>Study of past price &amp; volume charts to predict future price movement</td><td>This chapter</td></tr></tbody></table></div>
+<p><strong>Exam tip:</strong> Fundamental analysts ask <em>"what is it worth?"</em>; technical analysts ask <em>"where is the price heading?"</em>. The two are complementary, not mutually exclusive.</p>
+<hr>
+<h3>Fundamental Analysis (EIC framework)</h3>
+<p><strong>Concept:</strong> A top-down "E-I-C" drill — <strong>E</strong>conomy, then <strong>I</strong>ndustry, then <strong>C</strong>ompany — to arrive at intrinsic value. Assumes share price ultimately reflects the present value of future dividends/earnings.</p>
+<div class="tw"><table><thead><tr><th>Level</th><th>Factors considered</th><th>Techniques</th></tr></thead><tbody><tr><td><strong>Economic analysis</strong></td><td>National income growth, industrial-sector growth, inflation, monsoon</td><td>Anticipatory surveys; Barometer/Indicator approach (leading, roughly-coincidental, lagging indicators); Economic model-building</td></tr><tr><td><strong>Industry analysis</strong></td><td>Product life-cycle, demand-supply gap, barriers to entry, Govt. attitude</td><td>Regression analysis; Input-Output analysis</td></tr><tr><td><strong>Company analysis</strong></td><td>Net worth &amp; book value, sources/uses of funds, growth record, financial analysis</td><td>Decision-tree analysis; Trend analysis; Correlation &amp; regression</td></tr></tbody></table></div>
+<p><strong>Exam tip:</strong> Descriptive/theory marks — memorise the three-level table and the indicator sub-classification (leading / coincidental / lagging).</p>
+<hr>
+<h3>Technical Analysis — Principles &amp; Theories</h3>
+<p><strong>Concept:</strong> A method of predicting share-price movement from the study of price graphs/charts, on the belief that history repeats and prices move in trends.</p>
+<p><strong>Three underlying principles:</strong></p>
+<ol>
+<li>Market discounts everything (all information is already in the price).</li>
+<li>Price moves in trends.</li>
+<li>History tends to repeat itself.</li>
+</ol>
+<p><strong>Theories:</strong></p>
+<div class="tw"><table><thead><tr><th>Theory</th><th>Originator</th><th>Core idea</th></tr></thead><tbody><tr><td><strong>Dow (Dow Jones) Theory</strong></td><td>Charles Dow</td><td>Gauges relative strength of the market / acts as a business barometer, built on two indices (DJIA &amp; DJTA). Market moves in <strong>3 classifications</strong>: <em>primary movement</em> (long-term tide), <em>secondary movement</em> (intermediate reaction), <em>daily fluctuations</em> (ripples).</td></tr><tr><td><strong>Elliott Wave Theory</strong></td><td>Ralph Elliott</td><td>Prices unfold in repeating waves: <strong>impulsive/basic waves</strong> (in trend direction) and <strong>corrective/reaction waves</strong> (against it) — classically a 5-wave advance + 3-wave correction.</td></tr><tr><td><strong>Random Walk Theory</strong></td><td>—</td><td>Stock-price behaviour is <strong>unpredictable</strong>; past price trends do not reliably predict future moves. Directly contradicts technical analysis and underpins the Efficient Market Hypothesis.</td></tr></tbody></table></div>
+<p><strong>Pitfall:</strong> Random Walk and Dow/Elliott are opposing philosophies — do not blend them in an answer. Random Walk says charts are useless; Dow/Elliott say charts reveal exploitable patterns.</p>
+<hr>
+<h3>Moving Averages — Trading Decisions</h3>
+<p>Two moving averages are used to smooth out day-to-day noise and reveal the trend.</p>
+<p><strong>1. Arithmetic / Simple Moving Average (AMA / SMA)</strong> — simple average of the last <em>n</em> days' prices (equal weight to each day):</p>
+<div class="fbox">SMA = Σ Share Prices of last  n  daysn</div>
+<p><strong>2. Exponential Moving Average (EMA)</strong> — exponentially weighted, giving more weight to recent prices; more responsive than SMA:</p>
+<div class="fbox">EMA<sub>today</sub> = EMA<sub>prev day</sub> + [(Closing Price<sub>today</sub> - EMA<sub>prev day</sub>)× K]</div>
+<p>where the smoothing constant (exponent) is:</p>
+<div class="fbox">K = <span class="frac"><span class="num">2</span><span class="den">n+1</span></span></div>
+<p><strong>Concept:</strong> <em>K</em> is the weight given to the change of the latest price from the previous EMA. <em>n</em> = number of days in the average. If a value of <em>K</em> (the exponent/multiplier) is supplied in the question, use it directly instead of <code>2/(n+1)</code>.</p>
+<p><strong>Decision rule:</strong></p>
+<div class="tw"><table><thead><tr><th>Moving-average trend</th><th>Market signal</th><th>Action</th></tr></thead><tbody><tr><td>Rising day by day (up-trend)</td><td>Bullish</td><td>Take <strong>long</strong> position (buy)</td></tr><tr><td>Falling day by day (down-trend)</td><td>Bearish</td><td>Take <strong>short</strong> position (sell)</td></tr></tbody></table></div>
+<p>A common variant: when the <strong>price (or short-term MA) crosses above the longer MA → buy</strong>; crosses below → sell.</p>
+<p><strong>Pitfalls / exam tips:</strong></p>
+<ul>
+<li>AMA and EMA <strong>cannot be computed for non-trading days</strong> — skip holidays, don't carry the price forward.</li>
+<li>SMA gives equal weight to all <em>n</em> days; EMA front-loads recent data — state this if asked to compare.</li>
+<li>For the very first EMA in a series, the SMA (or the given seed) is used as the "previous day EMA".</li>
+</ul>
+<hr>
+<h3>Efficient Market Theory / Hypothesis (EMH)</h3>
+<p><strong>Concept:</strong> In an efficient market an investor <em>cannot</em> forecast prices from available information to earn abnormal profits — prices already reflect that information. Three levels:</p>
+<div class="tw"><table><thead><tr><th>Form</th><th>Price reflects…</th><th>Implication</th></tr></thead><tbody><tr><td><strong>Weak</strong></td><td>All past price information</td><td><strong>Technical analysis</strong> cannot earn abnormal profit</td></tr><tr><td><strong>Semi-strong</strong></td><td>Past prices + all publicly available information</td><td>Neither technical <strong>nor</strong> fundamental analysis helps; only <strong>private/insider</strong> info could</td></tr><tr><td><strong>Strong</strong></td><td>Past prices + public + <strong>private</strong> information</td><td><strong>No one</strong> (not even insiders) can earn abnormal profit</td></tr></tbody></table></div>
+<p><strong>Pitfall:</strong> Efficiency is <em>cumulative</em> — semi-strong includes weak, strong includes semi-strong. If strong form holds, all three hold.</p>
+<hr>
+<h3>Test of Weak Form — Run Test</h3>
+<p><strong>Concept:</strong> A non-parametric test of randomness. A <strong>run</strong> is an unbroken sequence of price moves in the <em>same</em> direction; a new run starts each time the direction reverses (a "+" spell followed by a "−" spell, etc.). If actual runs fall inside the expected band, price changes are random → weak-form efficient.</p>
+<p><strong>Step 1 — Observed number of runs (r):</strong> count the number of direction-change sequences in the price data.</p>
+<p><strong>Step 2 / 3 — Count signs:</strong> <span class="imath">n<sub>1</sub></span> = number of "+" (up) movements, <span class="imath">n<sub>2</sub></span> = number of "−" (down) movements.</p>
+<p><strong>Step 4 — Expected (mean) number of runs:</strong></p>
+<div class="fbox">μ<sub>r</sub> = <span class="frac"><span class="num">2 n<sub>1</sub> n<sub>2</sub></span><span class="den">n<sub>1</sub> + n<sub>2</sub></span></span> + 1</div>
+<p><strong>Step 5 — Standard deviation of runs (ICAI / CA-exam convention):</strong></p>
+<div class="fbox">σ<sub>r</sub> = √<span class="rad"><span class="frac"><span class="num">(μ<sub>r</sub> - 1) (μ<sub>r</sub> - 2)</span><span class="den"> n<sub>1</sub> + n<sub>2</sub> - 1 </span></span></span></div>
+<p><strong>Step 6 — Confidence band:</strong></p>
+<div class="fbox">Upper limit = μ<sub>r</sub> + (σ<sub>r</sub> × t),     Lower limit = μ<sub>r</sub> - (σ<sub>r</sub> × t)</div>
+<p><strong>Conclusion:</strong> If observed <strong>r</strong> lies <strong>between</strong> the lower and upper limits, the series is random → the market is in <strong>weak form</strong> of efficiency. <em>r</em> should be neither too low nor too high.</p>
+<p><strong>Pitfalls / exam tips:</strong></p>
+<ul>
+<li><strong>Two SD formulas exist.</strong> The ICAI/CA-exam form above uses <span class="imath">μ<sub>r</sub></span>. The general-statistics form is <span class="imath">σ<sub>r</sub>=√<span class="rad"><span class="frac"><span class="num">2n<sub>1</sub> n<sub>2</sub> (2n<sub>1</sub> n<sub>2</sub> - n<sub>1</sub> - n<sub>2</sub>)</span><span class="den">(n<sub>1</sub>+n<sub>2</sub>)<sup>2</sup> (n<sub>1</sub>+n<sub>2</sub>-1)</span></span></span></span>. <strong>Use the ICAI form in the CA Final exam</strong> (it is what the study material / examiner expects) unless the question specifies otherwise.</li>
+<li><em><strong>t</strong></em> is the value from the standard normal / t-table at the given <strong>significance level</strong>; it is almost always <strong>given in the question</strong>. Degrees of freedom = <span class="imath">n<sub>1</sub> + n<sub>2</sub> - 1</span>.</li>
+<li>Count the <em>first</em> price only as a reference (no sign); signs are assigned to each <em>change</em>.</li>
+</ul>
+<hr>
+<h3>Test of Weak Form — Autocorrelation / Serial Correlation Test</h3>
+<p><strong>Concept:</strong> Tests whether today's price is correlated with a lagged (earlier) price. Split the price series into two equal periods and treat them as two "shares."</p>
+<p><strong>Step 1 — Split &amp; correlate:</strong> e.g. for 20 days, Period 1 = days 1-10, Period 2 = days 11-20; compute the correlation coefficient between the two periods' prices:</p>
+<div class="fbox">ρ = Cov(P<sub>1</sub>, P<sub>2</sub>)σ<sub>P<sub>1</sub></sub> σ<sub>P<sub>2</sub></sub></div>
+<p><strong>Step 2 — Interpret:</strong> If <span class="imath">ρ ≈ 0</span>, successive prices are <strong>independent</strong> → the market is <strong>weak-form efficient</strong>. A significant non-zero <span class="imath">ρ</span> means prices are predictable from the past (weak form violated).</p>
+<p><strong>Pitfall:</strong> "Near zero" is the efficiency signal — a <em>high</em> correlation is evidence <em>against</em> weak-form efficiency (the opposite of a beginner's intuition that "high correlation = good/efficient").</p>
+<hr>
+<h3>References</h3>
+<ol>
+<li><strong>ICAI, CA Final Study Material, Paper 2 — Advanced Financial Management, Chapter "Security Analysis"</strong> (Final New Scheme, applicable May/Nov 2025) — the exam authority for the EIC framework, technical-analysis theories (Dow/Elliott/Random Walk), EMH forms, and the run-test/autocorrelation procedures &amp; the <span class="imath">μ<sub>r</sub></span> / <span class="imath">σ<sub>r</sub></span> conventions used above.</li>
+<li><strong>Corporate Finance Institute — "Efficient Markets Hypothesis"</strong> — backs the definitions of weak, semi-strong and strong forms of market efficiency (as of 2025).</li>
+<li><strong>FxExplained / Statology / CapMint — "Exponential Moving Average"</strong> — confirm the EMA recursive formula and the smoothing multiplier <span class="imath">K = 2/(n+1)</span> (as of 2025).</li>
+<li><strong>Standard non-parametric statistics references (runs test)</strong> — confirm <span class="imath">μ<sub>r</sub> = 2n<sub>1</sub> n<sub>2</sub>n<sub>1</sub>+n<sub>2</sub>+1</span> and document the general-statistics variance <span class="imath">2n<sub>1</sub> n<sub>2</sub>(2n<sub>1</sub> n<sub>2</sub> - n<sub>1</sub> - n<sub>2</sub>)(n<sub>1</sub>+n<sub>2</sub>)<sup>2</sup>(n<sub>1</sub>+n<sub>2</sub>-1)</span>, noted as the alternative to the ICAI exam form.</li>
+<li><strong>Charles Dow / Ralph Elliott — original technical-analysis theory</strong> (Dow Theory 3 movements; Elliott 5-impulse + 3-corrective wave structure) — standard finance/technical-analysis literature.</li>
+</ol>
+<p><em>Source: OCR of CA Ajay Agarwal AFM Concept Book (May 2025 sitting), cross-checked against a second scan and the authorities above. Page boilerplate and dead diagram links removed.</em></p>
+<hr>
+</section><section><h2 id="07-securitization">07. Securitization</h2>
+<blockquote><strong>Where it fits:</strong> A theory-only chapter in AFM (ICAI treats it under "Securitization"). No numerical problems are set on it except conceptual pricing of the paper — examinable almost entirely as short/long theory notes. Know the parties, the mechanism, the instruments, and the risks cold.</blockquote>
+<h3>Meaning &amp; Features</h3>
+<p><strong>Concept:</strong> Securitization is the process of repackaging illiquid, income-generating assets (loans, mortgages, receivables) into marketable, tradable securities backed by the cash flows of those assets.</p>
+<ul>
+<li><strong>Features:</strong> creation of financial instruments; bundling &amp; unbundling; tool of risk management (default risk shifted to investors); structured finance (tailored to investor risk-return); <strong>tranching</strong> (pool split into slices of differing risk/return); homogeneity of issued securities.</li>
+</ul>
+<div class="tw"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td>Bundling</td><td>Combining many assets into one pool</td></tr><tr><td>Unbundling</td><td>Splitting the pool into fixed-denomination instruments</td></tr><tr><td>Tranche</td><td>A slice of the pool carrying a distinct risk/return/priority of payment</td></tr></tbody></table></div>
+<p><strong>Exam tip:</strong> "Repackaging of illiquid assets into marketable securities" is the one-line definition graders look for.</p>
+<h3>Benefits of Securitization</h3>
+<p><strong>Concept:</strong> Benefits differ by the party viewing them.</p>
+<ul>
+<li><strong>Originator:</strong> off-balance-sheet financing; greater focus/specialisation in core business; improved financial ratios; reduced borrowing cost.</li>
+<li><strong>Investor:</strong> diversification of risk; helps meet regulatory requirements; protection against default (via credit enhancement/tranching).</li>
+</ul>
+<h3>Participants</h3>
+<div class="tw"><table><thead><tr><th>Category</th><th>Participant</th><th>Role</th></tr></thead><tbody><tr><td>Primary</td><td>Originator</td><td>Initiator/"securitizer"; sells assets off its books and receives funds</td></tr><tr><td>Primary</td><td>Special Purpose Vehicle (SPV)</td><td>Entity created solely for the deal; buys and holds the asset pool, issues the paper</td></tr><tr><td>Primary</td><td>Investors</td><td>Buyers of the securitized paper (retail/institutional)</td></tr><tr><td>Secondary</td><td>Obligors</td><td>Original borrowers who owe money (the underlying asset)</td></tr><tr><td>Secondary</td><td>Rating Agency</td><td>Assesses credit quality of the securitized paper</td></tr><tr><td>Secondary</td><td>Receiving &amp; Paying Agent (RPA) / Servicer</td><td>Collects from obligors, passes cash to SPV</td></tr><tr><td>Secondary</td><td>Trustee</td><td>Safeguards investors' interest</td></tr><tr><td>Secondary</td><td>Credit Enhancer</td><td>Originator or third party (bank) giving added comfort via collateral / L-C / surety bonds</td></tr><tr><td>Secondary</td><td>Structurer / Arranger</td><td>Investment banker who brings all parties together</td></tr></tbody></table></div>
+<p><strong>Exam tip:</strong> SPV is central — it achieves the "true sale" and bankruptcy-remoteness that keeps the assets off the originator's books.</p>
+<h3>Mechanism of Securitization</h3>
+<p><strong>Concept:</strong> Sequential steps:</p>
+<ol>
+<li>Creation of pool of assets (segregate similar mortgages/receivables).</li>
+<li>Transfer to SPV.</li>
+<li>Sale of securitized papers (SPV designs instruments, e.g. PTC &amp; PTS).</li>
+<li>Administration of assets (collect principal + interest).</li>
+<li>Recourse to originator (on default, paper performance depends on underlying; may revert to originator).</li>
+<li>Repayment of funds to investors from pooled cash flows.</li>
+<li>Credit rating of instruments (before sale, to signal risk).</li>
+</ol>
+<h3>Securitization Instruments</h3>
+<p><strong>Concept:</strong> Classified by maturity/cash-flow structure.</p>
+<div class="tw"><table><thead><tr><th>Instrument</th><th>Cash-flow character</th></tr></thead><tbody><tr><td>Pass Through Certificate (PTC)</td><td>Direct ownership claim; all interest &amp; principal collected are <strong>passed straight through</strong> to investors as received (pro-rata)</td></tr><tr><td>Pay Through Security (PTS)</td><td>SPV <strong>debt</strong> backed by the assets; SPV can restructure multiple tranches of differing maturities and reinvest surplus short-term</td></tr><tr><td>Stripped Securities</td><td>Pool cash flows split into two: <strong>Interest-Only (IO)</strong> and <strong>Principal-Only (PO)</strong></td></tr></tbody></table></div>
+<ul>
+<li><strong>IO holder</strong> receives only interest; <strong>PO holder</strong> receives only principal.</li>
+<li><strong>Rate sensitivity (examinable):</strong> When market YTM <strong>rises</strong>, prepayments slow → <strong>PO price falls</strong>, and prolonged interest cash flows make <strong>IO value rise</strong>. When rates fall, prepayments speed up → PO gains, IO loses.</li>
+</ul>
+<p><strong>Pitfall:</strong> Do not equate PTS with PTC. PTC passes cash immediately (pass-through); PTS is a bond of the SPV that can be re-tranched and lets the SPV reinvest surplus (pay-through). IO/PO react to interest rates in <strong>opposite</strong> directions — the IO/PO direction is the single most tested trap.</p>
+<h3>Pricing of Securitization Instruments</h3>
+<p><strong>Concept:</strong> Price must be acceptable to both originator (an outflow/cost of funds) and investor (a required return).</p>
+<ul>
+<li><strong>Originator's angle:</strong> priced at the rate at which the originator is willing to incur outflow (its effective cost of funds).</li>
+<li><strong>Investor's angle:</strong> present value of the best estimate of expected future cash flows, discounted at the required yield to maturity (YTM).</li>
+</ul>
+<p><strong>Key formula (investor's angle):</strong></p>
+<div class="fbox">P<sub>0</sub> = Σ<sub>t=1</sub><sup>n</sup> E(CF<sub>t</sub>)(1 + y)<sup>t</sup></div>
+<p>where <span class="imath">P<sub>0</sub></span> = price of the securitized instrument, <span class="imath">E(CF<sub>t</sub>)</span> = expected cash flow (interest + principal, net of servicing) in period <span class="imath">t</span>, <span class="imath">y</span> = required yield to maturity, <span class="imath">n</span> = number of periods.</p>
+<p><strong>Exam tip:</strong> This is ordinary DCF/bond valuation applied to <strong>expected</strong> (not contractual) pool cash flows — expectations must reflect prepayment and default estimates.</p>
+<h3>Risks in Securitization</h3>
+<div class="tw"><table><thead><tr><th>Risk</th><th>Nature</th></tr></thead><tbody><tr><td>Credit / Counterparty risk</td><td>Bankruptcy or non-performance of the servicer/obligors</td></tr><tr><td>Legal risk</td><td>Weak statutory framework in India; disputes over legal ownership can delay investor payouts</td></tr><tr><td>Market risk — Macroeconomic</td><td>Underlying loan performance depends on industry/economy downturns</td></tr><tr><td>Market risk — Prepayment</td><td>Falling rates trigger prepayment → reinvestment risk at lower yields</td></tr><tr><td>Market risk — Interest-rate mismatch</td><td>Floating-rate pool vs fixed-rate payouts (or vice-versa) can leave inflows short of payouts</td></tr></tbody></table></div>
+<h3>Problems in Securitization (Indian context)</h3>
+<p><strong>Concept:</strong> Reasons for the dismal growth of securitization in India:</p>
+<ul>
+<li><strong>Stamp duty</strong> on mortgage-debt transfer (can be very high, historically up to ~12% in some states).</li>
+<li><strong>Taxation</strong> — SPV/trustee taxed in a representative capacity; investors taxed on their share of income.</li>
+<li><strong>Accounting</strong> difficulties when assets are transferred without recourse.</li>
+<li><strong>Lack of standardization</strong> — each originator uses its own documentation format.</li>
+<li><strong>Inadequate debt market</strong> — no well-developed secondary debt market.</li>
+<li><strong>Ineffective foreclosure laws</strong> — not supportive of lending institutions.</li>
+</ul>
+<h3>Tokenization &amp; Blockchain / DLT</h3>
+<div class="tw"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td>Tokenization</td><td>Converting tangible &amp; intangible assets into blockchain tokens; like securitization it turns illiquid assets liquid</td></tr><tr><td>Similarities with securitization</td><td>Liquidity, diversification, tradability, new investment opportunities</td></tr><tr><td>Blockchain / Distributed Ledger Technology (DLT)</td><td>Shared, peer-to-peer, decentralised, immutable ledger with no trusted intermediary</td></tr></tbody></table></div>
+<ul>
+<li><strong>DLT applications:</strong> financial services, healthcare, government, travel, economic forecasting.</li>
+<li><strong>DLT risks:</strong> unclear risk-ownership/accountability; tampered technology corrupts stored data; no central authority weakens process controls; information overload from huge data volumes.</li>
+</ul>
+<h3>Regulatory reference (India)</h3>
+<ul>
+<li>Governed by the <strong>RBI (Securitisation of Standard Assets) Directions, 2021</strong> (issued 24 Sep 2021, as updated).</li>
+<li><strong>Minimum Retention Requirement (MRR):</strong> originator must retain <strong>5%</strong> of book value for loans of original maturity ≤ 24 months, <strong>10%</strong> for &gt; 24 months, and <strong>5%</strong> for residential-mortgage-backed securities (RMBS). MRR is held by the originating lender itself.</li>
+<li><strong>Minimum Holding Period (MHP):</strong> the originator must hold a loan for a minimum period (now linked to loan tenor, not repayment frequency) before it is eligible for securitization — ensures seasoning and skin-in-the-game.</li>
+</ul>
+<p><strong>Exam tip:</strong> MRR + MHP together ensure the originator keeps "skin in the game," aligning it with investors (a post-2008-crisis reform).</p>
+<h3>References</h3>
+<ol>
+<li><strong>RBI (Securitisation of Standard Assets) Directions, 2021</strong> (RBI Master Direction, 24 Sep 2021, as updated) — MRR (5%/10%/5% RMBS), MHP, true-sale conditions; current for the 2025-26 syllabus.</li>
+<li><strong>ICAI CA Final AFM Study Material — "Securitization" chapter</strong> — features, participants, mechanism, instruments (PTC/PTS/stripped), pricing, risks, problems in India, tokenization/DLT (exam authority).</li>
+<li><strong>Standard fixed-income valuation (bond DCF / YTM discounting)</strong> — investor-angle pricing formula <span class="imath">P<sub>0</sub>=Σ E(CF<sub>t</sub>)/(1+y)<sup>t</sup></span>.</li>
+<li><strong>Stripped MBS references (IO/PO strips)</strong> — confirmation that a rise in interest rates lowers PO value and raises IO value (opposite prepayment sensitivities).</li>
+</ol>
+<hr>
+</section><section><h2 id="08-mutual-funds">08. Mutual Funds</h2>
+<blockquote><strong>Where it fits:</strong> In AFM, Mutual Funds is a high-scoring, calculation-light chapter on collective investment vehicles — computing NAV, pricing units (issue/repurchase with loads and dividend equalisation), measuring investor returns (HPR, annualised yield), and evaluating fund performance (expense ratio, tracking error). It also carries small theory-driven topics (SEBI structure, hedge-fund fees, indifference return).</blockquote>
+<hr>
+<h3>1. Introduction &amp; Types of Mutual Funds</h3>
+<p><strong>Concept:</strong> A mutual fund is a <strong>trust</strong> that pools money from many investors by issuing <strong>units</strong>, and invests the pool in securities (shares, debentures, bonds, money-market instruments). It suits investors who lack time or expertise and want diversification with small outlays. Returns and risks are passed through to unitholders in proportion to units held.</p>
+<p><strong>Definitions:</strong></p>
+<div class="tw"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td>Open-ended scheme</td><td>No fixed maturity; units bought/sold continuously at NAV-based prices directly from the fund.</td></tr><tr><td>Close-ended scheme</td><td>Fixed corpus and maturity; units issued once, then traded on the exchange.</td></tr><tr><td>Interval scheme</td><td>Hybrid — open for purchase/redemption only during specified intervals.</td></tr><tr><td>Growth plan</td><td>Income reinvested; investor gains only through NAV appreciation (no payout).</td></tr><tr><td>Dividend / Income-payout plan</td><td>Fund distributes income periodically; NAV falls by the amount distributed.</td></tr><tr><td>Dividend reinvestment plan</td><td>Distributions used to allot additional units instead of cash.</td></tr><tr><td>Load</td><td>Charge added to (entry) or deducted from (exit) NAV on transacting in units.</td></tr></tbody></table></div>
+<p><strong>Pitfalls / exam tips:</strong></p>
+<ul>
+<li>A mutual fund is a <em>trust</em>, not a company — the AMC merely manages it.</li>
+<li>SEBI has <strong>abolished entry load</strong> on Indian mutual-fund schemes (since Aug 2009); questions may still specify a load for computation, so use whatever the problem gives.</li>
+</ul>
+<hr>
+<h3>2. Establishment &amp; SEBI Regulation of Mutual Funds</h3>
+<p><strong>Concept:</strong> A mutual fund is registered with SEBI and set up under a <strong>four-tier structure</strong>: Sponsor → Trust/Trustees → AMC → Custodian.</p>
+<p><strong>Definitions:</strong></p>
+<div class="tw"><table><thead><tr><th>Party</th><th>Role / Norm (per SEBI (Mutual Funds) Regulations, 1996)</th></tr></thead><tbody><tr><td>Sponsor</td><td>Like a promoter; provides seed capital and appoints trustees. Must be in financial-services business for <strong>≥ 5 years</strong> and contribute <strong>≥ 40%</strong> of the AMC's net worth.</td></tr><tr><td>Trust / Trustees</td><td>Fund is set up as a trust; <strong>≥ 2/3 of trustees (trustee-company directors) must be independent.</strong> Trustees hold property for unitholders' benefit.</td></tr><tr><td>AMC (Asset Management Company)</td><td>Manages the fund's investments; <strong>≥ 50% of AMC directors must be independent.</strong> May charge management &amp; advisory fees.</td></tr><tr><td>Custodian</td><td>Holds custody of the fund's securities; registered with SEBI.</td></tr></tbody></table></div>
+<p><strong>Pitfalls / exam tips:</strong></p>
+<ul>
+<li><mark class="verify">⚠️ VERIFY</mark> — <strong>AMC minimum net worth:</strong> the concept book states <strong>₹100 crore</strong>, but the operative SEBI figure under Reg. 21 is <strong>₹50 crore</strong> (raised from ₹10 cr in 2014, unchanged as of the 2025-26 syllabus). Write ₹50 crore unless the question quotes otherwise; flag the discrepancy if the book value is expected.</li>
+<li>"Sponsor ≥ 40% of AMC net worth" is a favourite one-liner; note that holding ≥ 40% of an AMC's net worth <em>deems</em> a person a sponsor.</li>
+</ul>
+<hr>
+<h3>3. Net Asset Value (NAV)</h3>
+<p><strong>Concept:</strong> NAV is the per-unit value of the fund's net assets, computed (usually daily, at market value) as net assets divided by units outstanding. It drives issue and repurchase pricing.</p>
+<p><strong>Key formulas:</strong></p>
+<div class="fbox">NAV per unit = Net Assets of the Mutual FundNo. of Units Outstanding</div>
+<p><strong>Net Assets buildup (at market value):</strong></p>
+<div class="tw"><table><thead><tr><th>Particulars</th><th>Amount</th></tr></thead><tbody><tr><td>Market value of investments (shares, debentures, bonds)</td><td>xx</td></tr><tr><td>(+) Accrued income (e.g. dividend/interest accrued)</td><td>xx</td></tr><tr><td>(+) Closing cash balance</td><td>xx</td></tr><tr><td>(−) Accrued expenses / expenses payable</td><td>(xx)</td></tr><tr><td>(−) Other liabilities (e.g. amount payable on securities)</td><td>(xx)</td></tr><tr><td><strong>Net Assets of the Fund</strong></td><td><strong>xx</strong></td></tr></tbody></table></div>
+<p><strong>Closing cash balance</strong> (when not given):</p>
+<div class="tw"><table><thead><tr><th>Particulars</th><th>Amount</th></tr></thead><tbody><tr><td>Amount received on issue of units</td><td>xx</td></tr><tr><td>(−) Initial expenses</td><td>(xx)</td></tr><tr><td>(−) Initial investment in securities</td><td>(xx)</td></tr><tr><td>(+) Sale proceeds of securities</td><td>xx</td></tr><tr><td>(−) Purchase cost of securities</td><td>(xx)</td></tr><tr><td>(+) Income received on investments (dividend/interest)</td><td>xx</td></tr><tr><td>(−) Realised earnings distributed to unitholders</td><td>(xx)</td></tr><tr><td>(−) Operating expenses paid</td><td>(xx)</td></tr><tr><td>(+) Amount received on issue of new units</td><td>xx</td></tr><tr><td>(−) Amount paid on repurchase of units</td><td>(xx)</td></tr><tr><td><strong>Closing cash balance</strong></td><td><strong>xx</strong></td></tr></tbody></table></div>
+<p><strong>Roll-forward closing NAV</strong> (when only opening NAV is available):</p>
+<div class="tw"><table><thead><tr><th>Particulars</th><th>Amount</th></tr></thead><tbody><tr><td>Opening net assets (opening units × opening NAV)</td><td>xx</td></tr><tr><td>(±) Portfolio appreciation / (depreciation)</td><td>xx/(xx)</td></tr><tr><td>(+) Issue of new units (units × issue price)</td><td>xx</td></tr><tr><td>(−) Repurchase of units (units × repurchase price)</td><td>(xx)</td></tr><tr><td>(+) Income earned during the period</td><td>xx</td></tr><tr><td>(−) Income distributed to unitholders</td><td>(xx)</td></tr><tr><td>(+) Sale proceeds of securities</td><td>xx</td></tr><tr><td>(−) Purchase cost of securities</td><td>(xx)</td></tr><tr><td><strong>Closing net assets</strong></td><td><strong>xx</strong></td></tr></tbody></table></div>
+<div class="fbox">Closing NAV = Closing Net AssetsClosing No. of Units Outstanding</div>
+<p><strong>Pitfalls / exam tips:</strong></p>
+<ul>
+<li>Value investments at <strong>market price</strong>, not cost.</li>
+<li>Round NAV and number of units to <strong>2 decimals</strong> unless the question states otherwise.</li>
+<li>Don't double count: if income is <em>distributed</em>, it leaves cash <em>and</em> is not in net assets; if <em>retained</em>, it stays in cash/accrued income.</li>
+</ul>
+<hr>
+<h3>4. Issue Price &amp; Repurchase Price</h3>
+<p><strong>Concept:</strong> For open-ended funds, units are transacted at NAV adjusted for loads and dividend equalisation. Entry (front-end) load raises the buying price; exit (back-end) load lowers the selling price.</p>
+<p><strong>Key formulas:</strong></p>
+<div class="fbox">Issue (Public Offer) Price = NAV + (Entry Load% × NAV) + Dividend Equalisation p.u.</div>
+<div class="fbox">Repurchase (Redemption) Price = NAV - (Exit Load% × NAV) + Dividend Equalisation p.u.</div>
+<p>Equivalently, with load stated as a fraction of NAV:</p>
+<div class="fbox">Issue Price = NAV (1 + Entry Load%)     Repurchase Price = NAV (1 - Exit Load%)</div>
+<p><strong>Definitions:</strong></p>
+<div class="tw"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td>Entry / front-end load</td><td>Add-on to NAV paid by an incoming investor.</td></tr><tr><td>Exit / back-end load</td><td>Deduction from NAV borne by an outgoing investor.</td></tr><tr><td>Dividend equalisation</td><td>Per-unit accrued (undistributed) income; <strong>collected</strong> from new investors on issue and <strong>paid</strong> to exiting investors on repurchase, so distributable income per unit stays fair across cohorts.</td></tr></tbody></table></div>
+<p><strong>Dividend equalisation p.u.</strong> is derived from a "Statement of Income Available for Distribution": accumulate income earned each sub-period across the units then outstanding, add equalisation collected on fresh issues, deduct amounts attributable to repurchased units, giving per-unit income at each event date.</p>
+<p><strong>Pitfalls / exam tips:</strong></p>
+<ul>
+<li>Both loads are usually a <strong>% of NAV</strong>, not of the issue/repurchase price — read carefully.</li>
+<li>Dividend equalisation is <strong>added on both sides</strong> (issue and repurchase): the incoming investor pays for income already accrued; the exiting investor is paid their share of accrued-but-undistributed income.</li>
+</ul>
+<hr>
+<h3>5. Returns — Holding Period Return &amp; Annual Return</h3>
+<p><strong>Concept:</strong> HPR is the total percentage return a unitholder earns over the holding period; annualising makes different holding periods comparable.</p>
+<p><strong>Key formulas:</strong></p>
+<p>Dividend-payout (regular income) plan:</p>
+<div class="fbox">HPR (%) = (End Value - Begin Value) + Income receivedBegin Value × 100</div>
+<p>where End Value = units × NAV(end), Begin Value = units × NAV(begin), Income received = units × income p.u.</p>
+<p>Growth / dividend-reinvestment / bonus plan (income reflected in extra units, not cash):</p>
+<div class="fbox">HPR (%) = End Value - Begin ValueBegin Value × 100</div>
+<p>where End Value = <strong>(initial + reinvested/bonus units)</strong> × NAV(end); Begin Value = initial units × NAV(begin).</p>
+<p>Annualised return:</p>
+<div class="fbox">Annual Return (%) = HPR × 365No. of days held   or   HPR × 12No. of months held</div>
+<p><strong>Pitfalls / exam tips:</strong></p>
+<ul>
+<li>In the <strong>payout</strong> plan, distributed income is a separate cash inflow (numerator) — units stay constant. In the <strong>reinvestment/bonus/growth</strong> plan, income shows up as <em>more units</em>, so never add cash income again (double counting).</li>
+<li>If issue price / repurchase price are given, use them in place of NAV for begin/end values.</li>
+<li>Count <strong>both</strong> start and end dates when computing days held.</li>
+</ul>
+<hr>
+<h3>6. Evaluation — Expense Ratio &amp; Tracking Error</h3>
+<p><strong>Concept:</strong> Expense ratio shows the drag of operating costs on the fund; tracking error measures how tightly a fund follows its benchmark (key for index funds).</p>
+<p><strong>Key formulas:</strong></p>
+<div class="fbox">Expense Ratio (%) = Total Operating Expenses during the periodAverage Net Assets × 100,     Average Net Assets = Opening + Closing Net Assets2</div>
+<div class="fbox">Tracking Error = Σ (d - d&#772;)<sup>2</sup>n - 1</div>
+<p>where \(d\) = differential return = (Return on fund − Return on benchmark), \({d}\) = mean differential return, \(n\) = number of observations.</p>
+<p><strong>Definitions:</strong></p>
+<div class="tw"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td>Expense ratio</td><td>Operating costs (management/advisory fee, admin, marketing) as a % of average net assets.</td></tr><tr><td>Tracking error</td><td>Standard deviation of the fund-minus-benchmark return series; lower = closer tracking.</td></tr></tbody></table></div>
+<p><strong>Pitfalls / exam tips:</strong></p>
+<ul>
+<li>Tracking error uses the <strong>sample</strong> standard deviation — divide by <strong>(n − 1)</strong>, not n.</li>
+<li>Work returns in <strong>% units</strong> consistently; a tracking error of "1.507%" means SD of the differential-return series.</li>
+<li>A high expense ratio erodes net investor return even when gross performance is strong.</li>
+</ul>
+<hr>
+<h3>7. Indifference Return (Direct vs Mutual-Fund Investment)</h3>
+<p><strong>Concept:</strong> The gross return a mutual fund must earn so an investor is <em>indifferent</em> between investing directly in the market and going through the fund, after allowing for the fund's initial (one-time) and annual recurring expenses.</p>
+<p><strong>Key formula:</strong></p>
+<div class="fbox">Required MF Return (%) = Return on direct investment (%)1 - Initial Expenses (%) + Annual Recurring Expenses (%)</div>
+<p><strong>Pitfalls / exam tips:</strong></p>
+<ul>
+<li>Initial expense is a <strong>divisor</strong> (grossing up the invested base that shrank at entry); recurring expense is simply <strong>added</strong> on top.</li>
+<li>Express all three inputs in % of the amount invested.</li>
+</ul>
+<hr>
+<h3>8. Hedge Fund Manager Fees</h3>
+<p><strong>Concept:</strong> A hedge fund is a lightly-regulated, private pooled vehicle for select clients seeking high returns. The manager charges a fixed fee plus a performance-linked fee.</p>
+<p><strong>Key formulas:</strong></p>
+<div class="fbox">Base (fixed) Fee = Fixed % × Assets under Management</div>
+<div class="fbox">Incentive (performance) Fee = Incentive % × (Portfolio Value - Threshold)</div>
+<p>where the <strong>threshold</strong> is the contractually agreed level — typically the <strong>high-water mark</strong> (highest prior portfolio value) and/or a <strong>hurdle rate</strong>; the incentive fee applies only to value <strong>above</strong> it.</p>
+<p><strong>Definitions:</strong></p>
+<div class="tw"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td>Base fee</td><td>Charged on AUM regardless of performance (positive or negative return).</td></tr><tr><td>Incentive fee</td><td>Charged only on the excess of portfolio value over the agreed threshold.</td></tr><tr><td>High-water mark</td><td>Highest NAV/value previously reached; no incentive fee until it is exceeded, preventing double-charging for recovering past losses.</td></tr><tr><td>Hurdle rate</td><td>Minimum return that must be beaten before an incentive fee accrues.</td></tr></tbody></table></div>
+<p><strong>Pitfalls / exam tips:</strong></p>
+<ul>
+<li>The classic structure is <strong>"2 and 20"</strong> (2% base, 20% incentive), but always use the % given.</li>
+<li>With a high-water mark, if the current value is <strong>below</strong> the mark, incentive fee = <strong>0</strong> (base fee still applies).</li>
+<li>Apply the hurdle before the high-water mark only if the contract specifies both; read the terms carefully.</li>
+</ul>
+<hr>
+<h3>9. Special Funds</h3>
+<p><strong>Concept:</strong> Objective-specific schemes tested mostly as theory.</p>
+<div class="tw"><table><thead><tr><th>Fund</th><th>Meaning</th></tr></thead><tbody><tr><td>Index fund</td><td>Invests in the same stocks in the same weights as a chosen index (passive).</td></tr><tr><td>International fund</td><td>Raises money in India but invests globally.</td></tr><tr><td>Offshore fund</td><td>Located outside India; raises money globally to invest in India.</td></tr><tr><td>Sector fund</td><td>Invests the entire corpus in one sector (e.g. infrastructure, technology).</td></tr><tr><td>Money-market fund</td><td>Invests in short-term debt (commercial paper, T-bills, CDs).</td></tr></tbody></table></div>
+<p><strong>Advantages:</strong> professional management, diversification, convenient administration, potentially higher returns, tight regulation.</p>
+<p><strong>Drawbacks:</strong> no guaranteed return, over-diversification can dilute gains, difficulty selecting the right fund, cost (loads + expense ratio).</p>
+<hr>
+<h3>References</h3>
+<ol>
+<li><strong>ICAI CA Final AFM Study Material (Paper 2, 2025-26 syllabus), Chapter "Mutual Funds"</strong> — NAV computation, net-assets/closing-cash tables, issue &amp; repurchase pricing, dividend equalisation, HPR (payout vs growth/reinvestment), annualised yield, expense ratio and tracking-error definitions.</li>
+<li><strong>SEBI (Mutual Funds) Regulations, 1996 (as amended; current as of the 2025-26 syllabus), Reg. 7, 18, 21</strong> — fund registration and four-tier structure; sponsor 5-year track record and ≥40% AMC net-worth contribution; ≥2/3 independent trustees; ≥50% independent AMC directors; <strong>AMC minimum net worth ₹50 crore</strong> (raised from ₹10 cr in 2014) — note the concept book's ₹100 cr figure is not the operative SEBI number.</li>
+<li><strong>SEBI investor-education material / notification on abolition of entry load (effective 1 Aug 2009)</strong> — treatment of loads in issue pricing.</li>
+<li><strong>CA Final SFM/AFM revision references (e.g. ICAI-aligned faculty notes)</strong> — indifference-return formula: MF return = Direct return ÷ (1 − initial expense%) + recurring expense%.</li>
+<li><strong>CFA Program / standard alternative-investments references (hedge-fund fee structures)</strong> — base ("management") fee on AUM, incentive fee on gains above a high-water mark / hurdle rate ("2 and 20").</li>
+</ol>
+<hr>
+</section><section><h2 id="11-international-financial-management">11. International Financial Management</h2>
+<blockquote><strong>Where it fits:</strong> The AFM cross-border chapter — how a firm raises money abroad (GDR/ADR/FCCB), appraises a project in a foreign currency (international capital budgeting), and measures the return a foreign investor earns on a security once currency movement is layered on. It leans on the Forex Exposure chapter for exchange-rate estimation (IRP/PPP) and on the Cost of Capital / Capital Budgeting chapters for the mechanics.</blockquote>
+<hr>
+<h3>International Sources of Finance</h3>
+<p><strong>Concept:</strong> Instruments an Indian company uses to raise capital in foreign currency. A <strong>Depository Receipt</strong> is a negotiable certificate, denominated in a currency not native to the issuer, representing the company's underlying equity shares held by a custodian.</p>
+<p><strong>Definitions</strong></p>
+<div class="tw"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td>GDR</td><td>Global Depository Receipt — DR issued/traded <strong>outside</strong> the issuer's home country (and outside USA); represents underlying shares; raises foreign currency.</td></tr><tr><td>ADR</td><td>American Depository Receipt — a DR issued in the <strong>USA</strong>, denominated in USD.</td></tr><tr><td>IDR</td><td>Indian Depository Receipt — a DR issued <strong>in India</strong> by a foreign company.</td></tr><tr><td>FCCB</td><td>Foreign Currency Convertible Bond — a convertible bond issued in a currency other than the issuer's domestic currency; holder can convert into equity.</td></tr><tr><td>ECB (Euro Convertible Bond)</td><td>Debt instrument giving the holder an option to convert the bond into equity shares.</td></tr></tbody></table></div>
+<p><strong>Pitfalls / exam tips</strong></p>
+<ul>
+<li>"GDR issued in the US = ADR; DR issued in India by a foreign issuer = IDR" — a favourite one-liner.</li>
+<li><strong>FCCB advantages:</strong> flexibility to convert to equity, <em>delayed</em> dilution of equity, easily marketable. <strong>Disadvantages:</strong> higher exchange risk, creates more debt with interest outgo in foreign currency.</li>
+<li>GDRs usually carry <strong>no voting rights</strong> for the DR holder until conversion (shares are held by the custodian).</li>
+</ul>
+<hr>
+<h3>Cost of GDR (Kₑ) and Number of GDRs to be issued</h3>
+<p><strong>Key formulas</strong></p>
+<div class="fbox">K<sub>e</sub> = (<span class="frac"><span class="num">D<sub>1</sub></span><span class="den">P<sub>0</sub></span></span>)× 100 + g</div>
+<p>where <span class="imath">g</span> = growth rate of dividend, <span class="imath">P<sub>0</sub></span> = <strong>net proceeds per GDR</strong>, and</p>
+<div class="fbox">D<sub>1</sub> = (No. of shares underlying per GDR)×(Expected dividend per underlying share at end of Year 1)</div>
+<div class="fbox">Issue Price per GDR = (No. of shares per GDR)×(Market Price per underlying share)×(1 - Discount on issue %)</div>
+<div class="fbox">P<sub>0</sub> = Net Proceeds per GDR = Issue Price per GDR×(1 - Flotation Cost %)</div>
+<div class="fbox">No. of GDRs to be issued = Amount required for investment in the projectNet Proceeds per GDR</div>
+<p><strong>Concept:</strong> A Gordon (constant-growth) cost-of-equity applied to a fresh issue: the price in the denominator is the <strong>net proceeds</strong> (after discount on issue <em>and</em> flotation cost), which raises Kₑ relative to using market price.</p>
+<p><strong>Pitfalls / exam tips</strong></p>
+<ul>
+<li>GDRs are typically issued at a <strong>discount to the current market price</strong> — apply <code>(1 − discount%)</code> to the market price to get the issue price. Do not confuse the discount with flotation cost; both reduce proceeds and are applied sequentially.</li>
+<li><span class="imath">D<sub>1</sub></span> is the dividend <strong>per GDR</strong>, so multiply the per-share dividend by the number of shares bundled into one GDR.</li>
+<li>If the question gives <span class="imath">D<sub>0</sub></span> and <span class="imath">g</span>, then <span class="imath">D<sub>1</sub> = D<sub>0</sub>(1+g)</span>.</li>
+</ul>
+<hr>
+<h3>International Capital Budgeting</h3>
+<p><strong>Concept:</strong> Evaluating/selecting long-term projects in a foreign country. Techniques are identical to domestic capital budgeting (NPV, MIRR, etc.). The single rule: <strong>cash flows and the discount rate must be in the same currency.</strong> Two approaches:</p>
+<p><strong>(i) Foreign Currency Approach</strong> — estimate cash flows in foreign currency, discount at a foreign-currency discount rate, then convert the resulting NPV to home currency at the <strong>spot rate at the beginning</strong>.</p>
+<div class="fbox">r<sub>foreign</sub> = [(1 + Required Return in Home Currency)(1 + Risk-Free Rate in Home Currency)×(1 + Risk-Free Rate in Foreign Currency)] - 1</div>
+<p><strong>(ii) Home Currency Approach</strong> — convert each year's foreign-currency cash flows to home currency using <strong>estimated future exchange rates</strong> (from IRP or PPP), then discount at the home-currency discount rate; NPV is already in home currency.</p>
+<p><strong>Definitions</strong></p>
+<div class="tw"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td>IRP (Interest Rate Parity)</td><td>Forward/estimated rate driven by the interest-rate differential between two currencies.</td></tr><tr><td>PPP (Purchasing Power Parity)</td><td>Estimated rate driven by the inflation-rate differential between two currencies.</td></tr></tbody></table></div>
+<p><strong>Pitfalls / exam tips</strong></p>
+<ul>
+<li>The foreign-currency discount rate above strips the home real return and re-inflates it with the foreign nominal rate — it is the Fisher/IRP-consistent conversion of the home required return into a foreign-currency rate. Both approaches give the <strong>same NPV</strong> in a common currency if assumptions are consistent.</li>
+<li><strong>Silent case:</strong> if the question gives one discount rate without saying which currency, assume it is the company's <strong>home-currency</strong> rate (use the Home Currency Approach).</li>
+<li>Convert the <em>final NPV</em> (not intermediate flows) at the spot rate under the Foreign Currency Approach.</li>
+</ul>
+<hr>
+<h3>Foreign Company Developing a Product (Software) in India — Repatriation &amp; Viability</h3>
+<p><strong>Concept:</strong> An MNC gets software built by its Indian arm at a <strong>transfer price</strong>, then repatriates the after-tax profit home. Used to find the minimum price to charge the end customer and whether the project is viable.</p>
+<p><strong>Repatriation amount (in ₹, then converted)</strong></p>
+<div class="tw"><table><thead><tr><th>Particulars</th><th>Amount (₹)</th></tr></thead><tbody><tr><td>Transfer Price</td><td>xxx</td></tr><tr><td>(−) Costs (rent, manpower, administration, etc.)</td><td>(xxx)</td></tr><tr><td><strong>EBT</strong></td><td>xxx</td></tr><tr><td>(−) Corporate Tax</td><td>(xxx)</td></tr><tr><td><strong>EAT</strong></td><td>xxx</td></tr><tr><td>(−) Withholding Tax <em>(only if NOT eligible for tax credit)</em></td><td>(xxx)</td></tr><tr><td><strong>Repatriation Amount (₹)</strong></td><td>xxx</td></tr><tr><td><strong>Repatriation Amount (in foreign company's currency)</strong></td><td>xxx</td></tr></tbody></table></div>
+<p><strong>Total cost incurred on product development</strong> (in foreign currency) = Transfer Price − Repatriation Amount.</p>
+<p><strong>Viability advice</strong> = Selling price to customers − Total cost incurred on development = Profit / (Loss).</p>
+<p><strong>Pitfalls / exam tips</strong></p>
+<ul>
+<li>Deduct <strong>withholding tax only when it is not creditable</strong> against home-country tax (double-tax-avoidance) — otherwise ignore it, as the parent recovers it.</li>
+<li>Keep the currency label on every line; convert to the parent's currency <strong>only at the repatriation line</strong> unless told otherwise.</li>
+</ul>
+<hr>
+<h3>Return on Investment in International Securities Market</h3>
+<p><strong>Concept:</strong> A foreign investor's total return = the security's return in its local currency, geared up or down by the currency movement on conversion back home.</p>
+<p><strong>Method A — appreciation/depreciation % given</strong></p>
+<p>Step 1 — domestic (local-currency) return:</p>
+<div class="fbox">R<sub>domestic</sub> = <span class="frac"><span class="num">D + P<sub>1</sub> - P<sub>0</sub></span><span class="den">P<sub>0</sub></span></span>× 100</div>
+<p>where <span class="imath">D</span> = dividend/interest for the year, <span class="imath">P<sub>1</sub></span> / <span class="imath">P<sub>0</sub></span> = market price at end / beginning.</p>
+<p>Step 2 — foreign investor's return (when the % change of the <strong>security's currency</strong> vs the investor's home currency is given):</p>
+<div class="fbox">R<sub>foreign</sub> = (1 + R<sub>domestic</sub>)×(1 ± Appreciation/(Depreciation)) - 1</div>
+<p>(use <strong>+</strong> for appreciation of the security's currency, <strong>−</strong> for depreciation.)</p>
+<p><mark class="verify">⚠️ VERIFY</mark> — When instead the % change is quoted in terms of the <strong>investor's home currency</strong> (i.e. how the home currency moves against the security's currency), the OCR is garbled; the economically correct form is the reciprocal:</p>
+<div class="fbox">R<sub>foreign</sub> = (1 + R<sub>domestic</sub>)(1 ± Appreciation/(Depreciation) of home currency) - 1</div>
+<p>(home-currency <strong>appreciation ⇒ divide by (1 + %)</strong>, i.e. the foreign investor's return falls). Confirm the exact denominator against the specific ICAI question wording.</p>
+<p><strong>Method B — exchange rates given (step method)</strong></p>
+<ol>
+<li>Convert the home-currency investment into foreign currency at the beginning spot rate.</li>
+<li>Units bought = Investment in foreign ccy ÷ market price per unit at beginning.</li>
+<li>Value at year-end (foreign ccy) = Units × market price per unit at year-end.</li>
+<li>Convert step-3 value to home currency at the year-end exchange rate.</li>
+<li>Return = (Home-ccy value at end − Home-ccy investment at beginning) ÷ Home-ccy investment at beginning.</li>
+</ol>
+<p><strong>Pitfalls / exam tips</strong></p>
+<ul>
+<li>Never add the security return and the currency return arithmetically — <strong>compound</strong> them: <code>(1+r)(1±e) − 1</code>.</li>
+<li>Watch the direction convention: gains to the foreign investor come from the <em>security's currency appreciating</em> (equivalently, the home currency depreciating).</li>
+</ul>
+<hr>
+<h3>Foreign Exchange Exposure — Essentials</h3>
+<p><strong>Concept:</strong> Operating across currencies exposes a firm to three exposures; banks route interbank funds through three account types; and four broad strategies manage exposure.</p>
+<p><strong>Definitions — types of exposure</strong></p>
+<div class="tw"><table><thead><tr><th>Type</th><th>Meaning</th></tr></thead><tbody><tr><td>Transaction Exposure</td><td>Effect of an exchange-rate change on <strong>outstanding obligations</strong> that are settled after the rate changes.</td></tr><tr><td>Translation / Accounting Exposure</td><td>Gains/losses from translating foreign-currency assets &amp; liabilities into the <strong>parent's currency for consolidation</strong>.</td></tr><tr><td>Economic Exposure</td><td>Extent to which the firm's <strong>economic value</strong> can decline due to rate changes altering input costs and output prices.</td></tr></tbody></table></div>
+<p><strong>Definitions — interbank accounts</strong></p>
+<div class="tw"><table><thead><tr><th>Account</th><th>Meaning ("our / your / their")</th></tr></thead><tbody><tr><td>Nostro</td><td>"Our account with you" — a bank's foreign-currency account held <strong>in a foreign country</strong>.</td></tr><tr><td>Vostro</td><td>"Your account with us" — a local-currency account maintained by a <strong>foreign bank</strong> with the domestic bank.</td></tr><tr><td>Loro</td><td>"Their account" — a third bank's account referenced when one bank remits foreign currency for credit to another bank.</td></tr></tbody></table></div>
+<p><strong>Exposure-management strategies (risk : reward)</strong></p>
+<div class="tw"><table><thead><tr><th>Strategy</th><th>Description</th></tr></thead><tbody><tr><td>Low Risk : Low Reward</td><td>Automatic hedging of every exposure in the forward market as it arises; never leave a position open.</td></tr><tr><td>Low Risk : Reasonable Reward</td><td>Selective hedging — cover when forward rates are attractive, stay open when they are not.</td></tr><tr><td>High Risk : Low Reward</td><td>Worst strategy — leave all exposures unhedged; no effort.</td></tr><tr><td>High Risk : High Reward</td><td>Active trading via continuous cancellation/extension of forwards; treasury becomes a profit centre.</td></tr></tbody></table></div>
+<p><strong>Pitfalls / exam tips</strong></p>
+<ul>
+<li>Translation exposure is a <strong>book/consolidation</strong> effect; economic exposure is a <strong>cash-flow/value</strong> effect over the long run — do not conflate them.</li>
+<li><strong>Money-market hedge</strong> fixes the future rate (eliminates downside) but forgoes favourable movements and is more complex to arrange — a common advantage/disadvantage list.</li>
+</ul>
+<hr>
+<h3>References</h3>
+<ol>
+<li><strong>ICAI CA Final AFM Study Material / Module — International Financial Management &amp; Cost of Capital</strong> (exam authority; 2025-26 syllabus): backs Cost of GDR = (D₁/P₀)+g using <strong>net proceeds</strong>, number of GDRs, repatriation/viability format, and the two capital-budgeting approaches.</li>
+<li><strong>ICAI BOS — Cost of Capital chapter</strong> (live.icai.org): backs the fresh-issue rule that net proceeds <code>(P − F)</code> replace market price in Kₑ.</li>
+<li><strong>International Fisher Effect / Interest Rate Parity</strong> (Fisher hypothesis; standard IFM references): backs the foreign-currency discount-rate conversion <code>[(1+home req.)/(1+home Rf)]×(1+foreign Rf) − 1</code> and IRP/PPP-based estimated exchange rates.</li>
+<li><strong>International capital budgeting — foreign-currency vs home-currency (own-currency discounting) approach</strong> (Cambridge <em>International Financial Management</em>; xplaind): backs the "same-currency for cash flows and discount rate" rule and NPV conversion at spot.</li>
+<li><strong>Foreign-currency rate of return / uncovered return</strong> (Saylor/Lardbucket <em>International Economics: Theory and Policy</em>, Ch. on FX markets and rates of return): backs the currency-adjusted foreign-investor return <code>(1+r_local)(1±Δe) − 1</code>.</li>
+<li><strong>FEDAI / RBI interbank practice</strong> (standard): backs the Nostro/Vostro/Loro account definitions and money-market/forward hedging notes.</li>
+</ol>
+<hr>
+</section><section><h2 id="14-mergers-acquisitions-corporate-restructuring">14. Mergers, Acquisitions &amp; Corporate Restructuring</h2>
+<blockquote><strong>Where it fits:</strong> The applied "deal-math" chapter of AFM. Given two companies, you fix the consideration (a share <strong>swap ratio</strong> or <strong>cash</strong>), rebuild the merged entity's book value, earnings, market value and shareholding, decide who gains or loses, find the acceptable-ratio limits for each side, test deal feasibility by NPV, and handle the other restructuring tools (demerger, capital reduction, stock split, bonus, buyback).</blockquote>
+<p><strong>Notation used throughout:</strong> subscript <code>A</code> = Acquirer, <code>T</code> = Target, <code>AT</code> = merged entity. <code>N</code> = no. of equity shares, <code>E</code> = earnings available to equity shareholders (PAT − preference dividend), <code>V</code> = market capitalisation, <code>ER</code> = exchange (swap) ratio, <code>t</code> = tax rate.</p>
+<hr>
+<h3>Introduction &amp; Market Capitalisation</h3>
+<p><strong>Concept:</strong> Corporate restructuring reorganises operations to improve efficiency. Types: <strong>M&amp;A</strong>, <strong>Demerger</strong>, <strong>Reconstruction</strong> (financial restructuring), <strong>Stock split</strong>, <strong>Bonus issue</strong>, <strong>Equity buyback</strong> (ownership restructuring). In an M&amp;A the <strong>Acquirer</strong> buys the <strong>Target</strong>; the Target ceases to exist and its shareholders are paid in <strong>shares</strong> of the acquirer or in <strong>cash</strong>.</p>
+<p><strong>Key formula(s):</strong></p>
+<div class="fbox">Promoters' Holding % = Shares held by PromotersTotal Shares Outstanding× 100</div>
+<div class="fbox">Market Capitalisation = MPS× N = EPS× P/E × N</div>
+<div class="fbox">Free-float Market Cap = MPS×(Shares held by Non-Promoters)</div>
+<p><strong>Definitions:</strong></p>
+<div class="tw"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td>Market capitalisation</td><td>Market value of <strong>all</strong> equity (promoters + non-promoters)</td></tr><tr><td>Free-float market cap</td><td>Market value of <strong>non-promoter</strong> (public) shares only</td></tr></tbody></table></div>
+<hr>
+<h3>Exchange (Swap) Ratio and Shares Issued — Share Offer</h3>
+<p><strong>Key formula(s):</strong></p>
+<div class="fbox">ER = Parameter of TargetParameter of Acquirer  (positive parameter: EPS, MPS, BVPS)</div>
+<div class="fbox">ER = Parameter of AcquirerParameter of Target  (negative parameter, e.g. NPA)</div>
+<div class="fbox">Weighted  ER = ER<sub>1</sub> W<sub>1</sub> + ER<sub>2</sub> W<sub>2</sub> +  + ER<sub>n</sub> W<sub>n</sub></div>
+<div class="fbox">Shares issued to Target = N<sub>T</sub> × ER     N<sub>AT</sub> = N<sub>A</sub> + (N<sub>T</sub> × ER)</div>
+<div class="fbox">If consideration is given: Shares issued = ConsiderationMPS<sub>A</sub> ;   ER = Shares issued to TargetN<sub>T</sub></div>
+<div class="fbox">Promoters' Holding % in Merged Entity = Promoter shares in A + shares issued to Target's promotersN<sub>AT</sub>× 100</div>
+<p><strong>Concept:</strong> <code>ER</code> = number of acquirer shares given per 1 target share. Where several bases are used (e.g. BVPS 25% / EPS 50% / MPS 25%), take the weighted average.</p>
+<p><strong>Pitfalls / exam tips:</strong></p>
+<ul>
+<li>A "positive" parameter (higher = better) puts <strong>Target over Acquirer</strong>; a negative parameter (lower = better, e.g. NPA) inverts it.</li>
+<li><code>MPS_A</code> used to convert a cash-value consideration into shares is the <strong>pre-merger</strong> acquirer price.</li>
+<li>Watch rounding of <code>N_T × ER</code> — do not round to whole shares unless the question says so.</li>
+</ul>
+<hr>
+<h3>Post-Merger Book Value — Share Offer</h3>
+<p><strong>Key formula(s):</strong></p>
+<div class="fbox">Post-Merger Book Value = N<sub>AT</sub>× FV<sub>A</sub><sub>Share Capital</sub> + (Reserves<sub>A</sub> + Capital Reserve on acquisition)<sub>Reserves</sub></div>
+<div class="fbox">Capital Reserve on acquisition = BV of Target - (N<sub>T</sub>× ER)× FV<sub>A</sub></div>
+<div class="fbox">BVPS<sub>AT</sub> = Post-Merger Book ValueN<sub>AT</sub></div>
+<p><strong>Concept:</strong> The excess of the Target's book value over the par value of shares issued to it becomes capital reserve (a bargain / negative-goodwill style adjustment in this simplified model). <code>FV</code> = face (par) value per acquirer share.</p>
+<hr>
+<h3>Post-Merger Earnings — Share Offer</h3>
+<p><strong>Key formula(s):</strong></p>
+<div class="fbox">E<sub>AT</sub> = E<sub>A</sub> + E<sub>T</sub> + Synergy in Earnings (if any)</div>
+<div class="fbox">EPS<sub>AT</sub> = E<sub>AT</sub>N<sub>AT</sub></div>
+<p><strong>Concept:</strong> Simply pool the two firms' earnings (add cost/revenue synergies), then divide by the enlarged share count. Because no debt is raised, there is <strong>no interest drag</strong> in a pure share offer.</p>
+<hr>
+<h3>Post-Merger Market Value — Share Offer</h3>
+<p><strong>Key formula(s):</strong></p>
+<div class="fbox">MPS<sub>AT</sub> = EPS<sub>AT</sub>× P/E of Merged Entity  (if P/E given)</div>
+<div class="fbox">MPS<sub>AT</sub> = V<sub>A</sub> + V<sub>T</sub> + Synergy in Market Value (if any)N<sub>AT</sub>  (if P/E not given)</div>
+<div class="fbox">V<sub>AT</sub> = MPS<sub>AT</sub>× N<sub>AT</sub></div>
+<p><strong>Concept:</strong> Synergy in market value = PV of future gains/savings. <code>V_A</code>, <code>V_T</code> may be pre-merger market caps or values derived from a valuation approach.</p>
+<p><strong>Pitfalls / exam tips:</strong></p>
+<ul>
+<li>If a merged-entity P/E is given, use the P/E route (it captures re-rating); otherwise use the pooled-value route.</li>
+</ul>
+<hr>
+<h3>Impact of Merger (Gain / Loss to Shareholders) — Share Offer</h3>
+<p><strong>Concept:</strong> Also phrased "accretion/dilution", "benefit to shareholders", "better/worse off". Compare each group's post-merger position against its pre-merger position.</p>
+<p><strong>Key formula(s):</strong></p>
+<p><em>On EPS basis:</em></p>
+<div class="fbox">Acquirer gain/share = EPS<sub>AT</sub> - EPS<sub>A</sub>     Target gain/share = (EPS<sub>AT</sub>× ER) - EPS<sub>T</sub></div>
+<p><em>On MPS basis:</em></p>
+<div class="fbox">Acquirer gain/share = MPS<sub>AT</sub> - MPS<sub>A</sub>     Target gain/share = (MPS<sub>AT</sub>× ER) - MPS<sub>T</sub></div>
+<div class="fbox">Total gain to a group = gain/share× (its pre-merger shares)</div>
+<div class="fbox">Total Gains from Merger = Total gain to Acquirer's SH + Total gain to Target's SH (on MPS)</div>
+<div class="fbox">True Cost of Merger (Net Cost / Cost of Takeover) = Total gain to Target's shareholders (on MPS)</div>
+<p><strong>Pitfalls / exam tips:</strong></p>
+<ul>
+<li>"Equivalent EPS/MPS" for the Target = post-merger figure <strong>× ER</strong> (because 1 old target share now equals <code>ER</code> merged shares).</li>
+<li><strong>If the question is silent, work on the MPS basis.</strong></li>
+<li>True cost of merger to the acquirer = the value handed to (gained by) the Target's shareholders — consistent with the standard "cost = value given − value of target received".</li>
+</ul>
+<hr>
+<h3>Value of Original Shareholders</h3>
+<p><strong>Concept:</strong> Splits the no-synergy merged value between the two original shareholder groups.</p>
+<p><strong>Key formula(s):</strong></p>
+<div class="fbox">Value per share = V<sub>A</sub> + V<sub>T</sub>N<sub>AT</sub></div>
+<div class="fbox">Acquirer's SH = Value per share× N<sub>A</sub>     Target's SH = Value per share× (N<sub>T</sub>× ER)</div>
+<hr>
+<h3>Maximum Exchange Ratio (Acceptable to Acquirer)</h3>
+<p><strong>Concept:</strong> The highest <code>ER</code> the acquirer can offer without diluting its own EPS/MPS. <code>ER</code> is solved as the balancing figure by setting the post-merger figure equal to the acquirer's pre-merger figure.</p>
+<p><strong>Key formula(s):</strong></p>
+<p><em>No EPS dilution:</em></p>
+<div class="fbox">E<sub>AT</sub>N<sub>A</sub> + (N<sub>T</sub>× ER) = EPS<sub>A</sub></div>
+<p><em>No MPS dilution (P/E given):</em></p>
+<div class="fbox">E<sub>AT</sub>× P/E<sub>AT</sub>N<sub>A</sub> + (N<sub>T</sub>× ER) = MPS<sub>A</sub></div>
+<p><em>No MPS dilution (P/E not given):</em></p>
+<div class="fbox">V<sub>A</sub> + V<sub>T</sub> + Synergy (if any)N<sub>A</sub> + (N<sub>T</sub>× ER) = MPS<sub>A</sub></div>
+<p><strong>Pitfalls / exam tips:</strong> If silent, use the <strong>MPS (no-dilution) basis</strong>. The acquirer wants a <em>low</em> ER; this gives its ceiling.</p>
+<hr>
+<h3>Minimum Exchange Ratio (Acceptable to Target)</h3>
+<p><strong>Concept:</strong> The lowest <code>ER</code> at which the Target's shareholders are no worse off (their equivalent EPS/MPS at least equals their pre-merger figure). <code>ER</code> is the balancing figure.</p>
+<p><strong>Key formula(s):</strong></p>
+<p><em>No EPS dilution:</em></p>
+<div class="fbox">E<sub>AT</sub>N<sub>A</sub> + (N<sub>T</sub>× ER)× ER = EPS<sub>T</sub></div>
+<p><em>No MPS dilution (P/E given):</em></p>
+<div class="fbox">E<sub>AT</sub>× P/E<sub>AT</sub>N<sub>A</sub> + (N<sub>T</sub>× ER)× ER = MPS<sub>T</sub></div>
+<p><em>No MPS dilution (P/E not given):</em></p>
+<div class="fbox">V<sub>A</sub> + V<sub>T</sub> + Synergy (if any)N<sub>A</sub> + (N<sub>T</sub>× ER)× ER = MPS<sub>T</sub></div>
+<p><strong>Pitfalls / exam tips:</strong> If silent, use the MPS basis. The bargaining zone is <strong>Min ER (Target) ≤ ER ≤ Max ER (Acquirer)</strong>.</p>
+<hr>
+<h3>M&amp;A through Cash Offer</h3>
+<p><strong>Concept:</strong> The Target's shareholders are paid cash, so <strong>no shares are issued</strong> ⇒ <code>N_AT = N_A</code>. Cash is usually borrowed, so post-merger earnings bear an <strong>after-tax interest cost</strong>.</p>
+<p><strong>Key formula(s):</strong></p>
+<div class="fbox">Cash paid = Cash per share× N<sub>T</sub></div>
+<div class="fbox">Capital Reserve on acquisition = BV of Target - (Cash per share× N<sub>T</sub>)</div>
+<div class="fbox">E<sub>AT</sub> = E<sub>A</sub> + E<sub>T</sub> + Synergy - [Cash/share× N<sub>T</sub>× Interest Rate× (1-t)]</div>
+<div class="fbox">EPS<sub>AT</sub> = E<sub>AT</sub>N<sub>A</sub>    BVPS<sub>AT</sub> = Post-Merger Book ValueN<sub>A</sub></div>
+<div class="fbox">MPS<sub>AT</sub> = EPS<sub>AT</sub>× P/E<sub>AT</sub>  OR   V<sub>A</sub> + V<sub>T</sub> + Synergy - (Cash/share× N<sub>T</sub>)N<sub>A</sub></div>
+<div class="fbox">V<sub>AT</sub> = MPS<sub>AT</sub>× N<sub>A</sub></div>
+<p><strong>Pitfalls / exam tips:</strong></p>
+<ul>
+<li>Divide by <code>N_A</code> (not <code>N_AT</code>) in every cash-offer per-share formula.</li>
+<li>The interest drag is <strong>after tax</strong>: <code>Interest × (1 − t)</code>. Omit it only if the question says the purchase is funded from own cash/reserves.</li>
+</ul>
+<hr>
+<h3>Impact &amp; Max/Min Cash — Cash Offer</h3>
+<p><strong>Key formula(s):</strong></p>
+<div class="fbox">Acquirer gain/share = MPS<sub>AT</sub> - MPS<sub>A</sub>     Target gain/share = Cash per share - MPS<sub>T</sub></div>
+<div class="fbox">True Cost of Merger = Total gain to Target's shareholders</div>
+<p><em>Maximum cash per share (Acquirer, no dilution) — cash/share is the balancing figure:</em></p>
+<div class="fbox">E<sub>A</sub> + E<sub>T</sub> + Synergy - [Cash/share× N<sub>T</sub>× Int.×(1-t)]N<sub>A</sub> = EPS<sub>A</sub></div>
+<div class="fbox"><sub>A</sub> + E<sub>T</sub> + Synergy - [Cash/share× N<sub>T</sub>× Int.×(1-t)]\× P/E<sub>AT</sub>N<sub>A</sub> = MPS<sub>A</sub></div>
+<div class="fbox">V<sub>A</sub> + V<sub>T</sub> + Synergy - (Cash/share× N<sub>T</sub>)N<sub>A</sub> = MPS<sub>A</sub>  (P/E not given)</div>
+<p><em>Minimum cash per share (Target):</em></p>
+<div class="fbox">Min Cash/share = MPS<sub>T</sub> + Loss of remuneration per share to Target's SH (if any)</div>
+<p><strong>Pitfalls / exam tips:</strong> If silent, compute the maximum cash per share on the <strong>MPS (no-dilution)</strong> basis.</p>
+<hr>
+<h3>Value of Acquisition &amp; Financial Feasibility (NPV)</h3>
+<p><strong>Key formula(s):</strong></p>
+<div class="fbox">Value of Acquisition = V<sub>AT</sub> - V<sub>A</sub></div>
+<div class="fbox">NPV = PV of cash inflows from Target after acquisition - Net outflow to acquire Target</div>
+<div class="fbox">alignedNet outflow = &Value of shares issued (N<sub>issued</sub>× MPS<sub>A</sub>) + Debentures issued &+ External-liability settlement - Amount realised from Target's assets (debtors, inventory, cash)aligned</div>
+<p><strong>Concept:</strong> Value of acquisition = the gain in the acquirer's own value. Feasibility is judged on NPV.</p>
+<p><strong>Pitfalls / exam tips:</strong></p>
+<ul>
+<li><strong>NPV &gt; 0 ⇒ acquisition advantageous; NPV &lt; 0 ⇒ not advantageous.</strong></li>
+<li>Net-outflow build-up nets off cash quickly realisable from the Target's own assets.</li>
+<li>(Value lens: a deal creates value only if post-deal <strong>EVA = NOPAT − Invested Capital × WACC</strong> improves; see Business Valuation chapter.)</li>
+</ul>
+<hr>
+<h3>Demerger</h3>
+<p><strong>Concept:</strong> A division of the <strong>Demerged Company</strong> is transferred to a <strong>Resulting Company</strong>. Assets and liabilities of the sold division move out; only the retained division's assets/liabilities stay. Usually the resulting company issues its shares to the demerged company's existing shareholders — a <strong>spin-off</strong>.</p>
+<p><strong>Pitfalls / exam tips:</strong> The <strong>number of shares of the Demerged Company does not change</strong> after a demerger.</p>
+<hr>
+<h3>Reconstruction (Financial Restructuring)</h3>
+<p><strong>Concept:</strong> Internal capital reduction/reorganisation. Compute the pool of "benefits", apply it to write off losses/assets, and the surplus is capital reserve.</p>
+<p><strong>Key formula(s):</strong></p>
+<div class="fbox">Step 1 — Benefits = arraylReduction in Equity Capital + Reduction in Pref. Capital + Waiver of debt claims (debentures, interest, creditors) + Upward revaluation of assetsarray</div>
+<div class="fbox">Step 2 — Utilised = arraylWrite-off fictitious assets (prelim. exp., issue costs) + Write-off Dr. balance of P\&L + Provisions created (e.g. bad debts) + Downward revaluation of assetsarray</div>
+<div class="fbox">Step 3 — Capital Reserve = Step 1 - Step 2</div>
+<hr>
+<h3>Stock Split, Bonus Issue &amp; Equity Buyback</h3>
+<p><strong>Concept:</strong> Stock split raises share count by cutting face value (total capital unchanged). Bonus issue capitalises reserves into free shares (no cash in). Buyback purchases own shares (usually above market) to cut the share count.</p>
+<p><strong>Key formula(s):</strong></p>
+<p><em>Stock split:</em></p>
+<div class="fbox">N<sub>after</sub> = Existing Share CapitalNew Face Value per share</div>
+<p><em>Bonus issue (ratio a : b = a bonus per b held):</em></p>
+<div class="fbox">N<sub>after</sub> = N<sub>before</sub> + Bonus shares    Reserves<sub>after</sub> = Reserves<sub>before</sub> - (Bonus shares× FV)</div>
+<div class="fbox">EPS<sub>after</sub> = EN<sub>after</sub>    MPS<sub>after</sub> = EPS<sub>after</sub>× P/E</div>
+<p><em>Equity buyback:</em></p>
+<div class="fbox">Buyback Price/share = Current MPS + Buyback Premium/share</div>
+<div class="fbox">Total buyback outlay = Shares bought back× Buyback Price/share</div>
+<div class="fbox">N<sub>after</sub> = N<sub>before</sub> - Shares bought back</div>
+<div class="fbox">EPS<sub>after</sub> = E<sub>before</sub> - Interest on buyback loan×(1-t)N<sub>after</sub> ;   Interest = Total outlay× Loan rate %</div>
+<div class="fbox">MPS<sub>after</sub> = EPS<sub>after</sub>× P/E    Market Cap = MPS<sub>after</sub>× N<sub>after</sub></div>
+<p><strong>Pitfalls / exam tips:</strong></p>
+<ul>
+<li>Bonus/split leave <strong>total earnings and total market cap unchanged</strong> — only per-share figures fall proportionately (subject to any re-rating).</li>
+<li>Buyback EPS rises only if the after-tax cost of the buyback loan is <strong>below</strong> the firm's pre-buyback earnings yield; drop the interest term if the buyback is funded from own reserves.</li>
+<li>Buybacks in India are governed by <strong>SEBI (Buy-Back of Securities) Regulations, 2018</strong> (limits, debt-equity cap, procedure) read with s.68 Companies Act, 2013.</li>
+</ul>
+<hr>
+<h3>References</h3>
+<ol>
+<li><strong>ICAI CA Final AFM Study Material — Ch. Mergers, Acquisitions &amp; Corporate Restructuring</strong> (2025-26 syllabus, exam authority) — swap/weighted ratio, post-merger EPS/MPS/BV, gain-loss and max/min ratio framework, NPV feasibility. Cross-checked against CA Ajay Agarwal concept book (source OCR).</li>
+<li><strong>Ross, Westerfield, Jaffe &amp; Jordan — Corporate Finance, Ch. 29 "Mergers and Acquisitions"</strong> — cost of merger = value given − value of target received; NPV of merger = (V_B + synergy) − cost; synergy definition. (Standard reference, as-of 9th–13th eds.)</li>
+<li><strong>CA Final AFM formula/revision compilations (Rohit Chipper; Zeroinfy exam-oriented theory)</strong> — corroboration of ICAI swap-ratio weights (BV 25% / EPS 50% / MPS 25%) and true-cost-of-merger treatment.</li>
+<li><strong>SEBI (Buy-Back of Securities) Regulations, 2018 — last amended 28 Nov 2024</strong> (sebi.gov.in), with s.68 Companies Act, 2013 — legal basis and limits for equity buyback.</li>
+<li><strong>Corporate Finance Institute / Wall Street Prep — Economic Value Added (EVA)</strong> — EVA = NOPAT − (Invested Capital × WACC) = NOPAT − Capital Charge; value-creation lens for judging an acquisition. (As-of 2025.)</li>
+<li><strong>CFA Program / AnalystPrep &amp; Vernimmen — Effects of share repurchases on EPS</strong> — buyback accretive only when after-tax cost of debt &lt; pre-buyback earnings yield; after-tax interest = rate × (1 − t).</li>
+</ol>
+<hr>
+</section><section><h2 id="formulas-to-double-check">⚠️ Formulas to double-check</h2>
+<p>Every line still flagged <code><mark class="verify">⚠️ VERIFY</mark></code> across the 7 chapters, grouped by chapter. Confirm each against the original CA Ajay Agarwal notes / the cited authority before relying on it in the exam.</p>
+<h3>08. Mutual Funds</h3>
+<ul>
+<li><strong>AMC minimum net worth:</strong> the concept book states <strong>₹100 crore</strong>, but the operative SEBI figure under Reg. 21 is <strong>₹50 crore</strong> (raised from ₹10 cr in 2014, unchanged as of the 2025-26 syllabus). Write ₹50 crore unless the question quotes otherwise; flag the discrepancy if the book value is expected.</li>
+</ul>
+<h3>11. International Financial Management</h3>
+<ul>
+<li><strong>Return on foreign security when the % change is quoted in the investor's home currency:</strong> the OCR is garbled; the economically correct form is the reciprocal <span class="imath">R<sub>foreign</sub> = 1 + R<sub>domestic</sub>1 ± Appreciation/(Depreciation) of home currency - 1</span> (home-currency appreciation ⇒ divide by (1 + %), so the foreign investor's return falls). Confirm the exact denominator against the specific ICAI question wording.</li>
+</ul></section></main>
+</div>
+</body></html>
